@@ -51,6 +51,7 @@ app.get('/ateliers', (req, res)=>{
 
 app.get('/a-propos', (req, res)=>{
     res.render('pages/a-propos', {
+        hero__label: ' Contact',
         page__title :"A Propos", 
         banner__image: "Rectangle 12 (2).png",
         hero__title: 'H-Fablab, un cadre pour la démocratisation du numérique',

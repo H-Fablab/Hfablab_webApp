@@ -1,39 +1,20 @@
 <section class="inner--hero contact--us section--margin">
-    <nav class="main--nav ">
-       <div class="logo--wrapper">
-            <a href="/"><img src="images/logo.png" alt="" srcset=""></a>
-       </div> 
-       <div class="nav-items">
-           <ul>
-            <li><a href="http://">Solution</a></li>
-            <li><a href="http://">Activités</a></li>
-            <li><a href="http://">L'organisation</a></li>
-            <li><a href="http://">Blog</a></li>
-           </ul>
-       </div>
-       <div class="nav--button__group">
-            <div class="language--box">
-                <img class="lang--icon" src="images/icons/eng-flag.svg" alt="" srcset="">ENG 
-                <span class="drop--down__icon">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.00056 7.68144L9.88806 4.79395L10.7129 5.61878L7.00056 9.33111L3.28823 5.61878L4.11306 4.79395L7.00056 7.68144Z" fill="#505050" fill-opacity="0.55"/>
-                        </svg>
-                    </span>
+{{>header}}
 
-            </div>
-
-            <a class="btn btn--primary" href="">Nous contacter</a>
-       </div>
-    </nav>
-
+<div class="content">
     <div class="header--text__container">
       <span class="pastille--label pastille--label__black">{{{hero__label}}}</span>
             <h1>{{{hero__title}}}</h1>
 
-            <div class="contact-box">
-               <div class="item--group">
-                     <p class="address__label">Téléphone</p>
-                    <p class="content">22508996001</p>
+            <div class="contact--box">
+               <div class="item--group address--box">
+                    <a href="mailto:hello@hventuregroup.com">contact@h-fablab.org</a>
+                   <div class="link--wrapper">
+                        <a href="tel:+">+225 0170793131</a> 
+                        <span>|</span>
+                        <a href="tel:+">+225 0170793131</a>
+                   </div>
+                    <a href="tel:+">+225 0170793131</a>
                </div>
                
                 <svg width="12" height="60" viewBox="0 0 12 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,42 +22,20 @@
                 </svg>
 
                <div class="item--group">
-                     <p class="address__label">Téléphone</p>
-                    <p class="content">22508996001</p>
+                    <a href="http://"> Bingerville, Akouai Santai, derrière jardin botanique, Abidjan, Côte d’Ivoire</a>
                </div>
             </div>
      </div>
-
-     <div class="hero--banner">
-                <img src="images/{{{banner__image}}}" alt="" srcset="">
-     </div>
-
+</div>
+    
+<div class="dark--separator"></div> 
 </section>
 
-<section class="section--wrapper main--contact__section mt-3">
+<section class="section--wrapper main--contact__section mt-1 mb-3">
     <div class="container flex--container">
-        <div class="col--unit__6 contact--details">
-            <h2>Nos adresses</h2>
-            <div class="address--box flex--container">
-                <div class="col--unit__6 separator">
-                    <h5 class="title">Nous contacer</h5>
-                    <a href="mailto:hello@hventuregroup.com">hello@hventuregroup.com</a>
-                    <a href="tel:+">+221 7865443333</a>
-                </div>
-                <div class="col--unit__6">
-                    <h5 class="title">Nous contacter</h5>
-                    <a href="mailto:hello@hventuregroup.com">hello@hventuregroup.com</a>
-                    <a href="tel:+">+221 7865443333</a>
-                </div>
-            </div>
-            <a class="map--link" href="http://">Ouvrir dans Map</a>
-        </div>
-
-        <div class="col--unit__6  up-scale__box form--wrapper">
-            <h2>Nous laisser un message</h2>
-            <p>Vestibulum augue tortor, consequat eu diam a, varius pulvinar ipsum. Vivamus posuere, mauris eu interdum</p>
-
-            <form action="">
+        <div class="col--unit__6 form--wrapper">
+            <h2 >Nous laisser un message</h2> 
+            <form  action="">
                 <div class="flex--container">
                     <div class="input--wrapper col--unit__6">
                         <label for="">Nom complet </label>
@@ -102,12 +61,9 @@
                 <input class="btn btn--primary" type="submit" value="Submit">
             </form>
         </div>
-    </div>
-</section>
+        <div class="col--unit__6 map__wrapper bg--clay">
 
-<section class="section--wrapper map--section mb-3">
-    <div class="container">
-        <img src="images/Rectangle 5939.png" alt="">
+        </div>
     </div>
 </section>
 

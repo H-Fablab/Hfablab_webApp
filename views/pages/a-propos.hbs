@@ -1,32 +1,7 @@
 <section class="inner--hero about section--margin">
-    <nav class="main--nav ">
-       <div class="logo--wrapper">
-            <a href="/"><img src="images/logo.png" alt="" srcset=""></a>
-       </div> 
-       <div class="nav-items">
-           <ul>
-            <li><a href="http://">Solution</a></li>
-            <li><a href="http://">Activités</a></li>
-            <li><a href="http://">L'organisation</a></li>
-            <li><a href="http://">Blog</a></li>
-           </ul>
-       </div>
-       <div class="nav--button__group">
-            <div class="language--box">
-                <img class="lang--icon" src="images/icons/eng-flag.svg" alt="" srcset="">ENG 
-                <span class="drop--down__icon">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.00056 7.68144L9.88806 4.79395L10.7129 5.61878L7.00056 9.33111L3.28823 5.61878L4.11306 4.79395L7.00056 7.68144Z" fill="#505050" fill-opacity="0.55"/>
-                        </svg>
-                    </span>
-
-            </div>
-
-            <a class="btn btn--primary" href="">Nous contacter</a>
-       </div>
-    </nav>
-
+    {{> header}}
     <div class="header--title__container">
+        <span class="pastille--label pastille--label__black">{{{hero__label}}}</span>
       <h2>{{{hero__title}}}</h2>
       <p>{{{hero__subtitle}}}</p>
      </div>
