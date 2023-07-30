@@ -44,10 +44,24 @@ app.get('/ateliers', (req, res)=>{
         banner__image: "Rectangle 6004.png",
         hero__label: 'Atelier',
         hero__title: 'Aprréhendez le numérique  <br class="blog--xxl__separator"> grâce à nos ateliers',
-        hero__subtitle: 'Nous organisons différentes formations numériques gratuites <br class="blog--xxl__separator"> en Côte d’ivoire et dans la sous région'
+        hero__subtitle: 'Nous organisons différentes formations numériques gratuites <br class="blog--xxl__separator"> en Côte d’ivoire et dans la sous région',
+        page__script: '<script type="module" src="js/atelier.js"></script>'
     })
 
 })
+
+
+app.get('/faire-un-don', (req, res)=>{
+    res.render('pages/donate', {
+        page__title :"Faire un don", 
+        banner__image: "img3.jpg",
+        hero__label: 'Faire un don',
+        hero__title: 'Nous soutenir',
+       
+    })
+
+})
+
 
 app.get('/a-propos', (req, res)=>{
     res.render('pages/a-propos', {
@@ -79,6 +93,39 @@ app.get('/domaines-d-expertise', (req, res)=>{
         banner__image: "55910121_914414448910557_1748538231957225472_n.jpg",
         hero__title: 'Domaines d’expertise',
         hero__subtitle: 'Nous organisons différentes formations numériques gratuites <br class="blog--xxl__separator"> eu turpis molestie, dictum es'
+    })
+
+})
+
+app.get('/agritech-et-bio', (req, res)=>{
+    res.render('pages/agritech-et-bio', {
+        page__title :"Agritech et bio", 
+        hero__label: 'Expertise',
+        banner__image: "Rectangle 5936.png",
+        hero__title: 'Domaines d’expertise',
+        hero__subtitle: 'Nous organisons différentes formations numériques gratuites <br class="blog--xxl__separator"> eu turpis molestie, dictum es'
+    })
+
+})
+
+app.get('/details-projet', (req, res)=>{
+    res.render('pages/details-project', {
+        page__title :"Détails projet", 
+        hero__label: 'Expertise',
+        banner__image: "unnamed.png",
+        hero__title: 'FABRICATION D’UN DESHYDRATEUR DE FRUITS ET LEGUMES',
+        hero__subtitle: 'Un atelier réalisé dans le cadre de la forge d’adaptations Nord-Sud, par le H-Fablab d’Abidjan.'
+    })
+
+})
+
+app.get('/liste-equipement', (req, res)=>{
+    res.render('pages/liste-equipement', {
+        page__title :"Liste de nos équipemets", 
+        hero__label: 'Equipement',
+        banner__image: "unnamed.png",
+        hero__title: 'Nos équipements',
+        hero__subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum es.'
     })
 
 })
