@@ -5,7 +5,7 @@
           <div class="container flex--container">
        
         <div class="col--unit__6  centered--box form--wrapper">
-            <form action="">
+            <form action="" enctype="multipart/form-data">
                 <div class="input--wrapper">
                         <label for="">Nom complet </label>
                         <input type="text" name="" id="">
@@ -47,12 +47,18 @@
 
                  <div class="input--wrapper">
                         <label for="">Niveau d'avancement </label>
-                        <input type="text" name="" id="">
+                         <div class="select">
+                            <select>
+                            <option value="1">Americano</option>
+                            <option value="2">Latte</option>
+                            <option value="3">Green Tea</option>
+                            </select>
+                        </div>
                 </div>
 
                  <div class="input--wrapper ">
                         <label for="">Ajouter un fichier </label>
-                        <textarea name="" id="" cols="30" rows="6"></textarea>
+                           <input type="file" id="profile_pic" name="profile_pic" accept="application/pdf" />
                 </div>
 
 

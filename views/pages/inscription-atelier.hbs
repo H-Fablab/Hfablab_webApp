@@ -1,0 +1,52 @@
+
+<section class="inner--hero inner--hero__bloc section--margin mt-2">
+         {{>header}}
+         <div class="hero--banner content">
+                <img src="images/{{{banner__image}}}" alt="" srcset="">
+                 <div class="header--text__container">
+                        <h1>{{{hero__title}}}</h1>
+                        <p>{{{hero__subtitle}}}</p>
+                    </div>
+                 <div class="dark--separator"></div>
+        </div>  
+</section>
+    <section class="section--wrapper mt-5 mb-5 form--section">
+          <div class="container flex--container">
+       
+        <div class="col--unit__6  centered--box form--wrapper">
+            <form action="">
+                <div class="input--wrapper">
+                        <label for="">Nom complet </label>
+                        <input type="text" name="" id="">
+                    </div>
+                    
+                <div class="flex--container">
+                     <div class="input--wrapper col--unit__6">
+                        <label for="">Email</label>
+                        <input type="text" name="" id="">
+                    </div>
+
+                    <div class="input--wrapper col--unit__6">
+                        <label for="">Téléphone </label>
+                        <input type="text" name="" id="">
+                    </div>
+                </div>
+
+                 <div class="input--wrapper">
+                        <label for="">Choix des équipements</label>
+                         <div class="select">
+                            <select>
+                            <option value="1">Americano</option>
+                            <option value="2">Latte</option>
+                            <option value="3">Green Tea</option>
+                            </select>
+                        </div>
+                </div>
+
+                <input class="btn btn--primary" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    </section>
+
+{{> main__footer}}
