@@ -939,7 +939,7 @@ justify-content: space-between;
 */
 
 .overlay--box {
-  padding: 1rem 9vw;
+  padding: 1rem 5vw;
 }
 .overlay--box .container{
   background-color: var(--primary);
@@ -1208,7 +1208,6 @@ justify-content: space-between;
   width:max-content;
 }
 #formList{
-  width:1280px;
   max-width: 100%;
   overflow: auto;
   margin:100px auto 50px;
@@ -1357,7 +1356,7 @@ justify-content: space-between;
 
 .main--footer{
   background-color: var(--primary);
-  padding: 3rem 9vw 0;
+  padding: 3rem 5vw 0;
 
 }
 
