@@ -1,4 +1,12 @@
 
+let nav__toggle = document.getElementById('nav-toggle')
+nav__toggle.onclick = e =>{
+		var x = document.getElementById("sm-menu--content")
+		var menu__toggle = document.getElementById("nav-toggle");
+		  menu__toggle.classList.toggle("open")
+		  x.classList.toggle("active")
+}
+
 //::::::::::::Beginning of hero slider slider:::::::::::://
 
 const myslide = document.querySelectorAll('.myslide'),
@@ -62,5 +70,3 @@ document.getElementById('prev').onclick = function(){
 }
 
 //:::::::::::: End of blog card slider:::::::::::://
-
-

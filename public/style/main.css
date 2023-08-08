@@ -3577,9 +3577,14 @@ white-space: nowrap;
 
 }
 
+.menu--content__group.active{
+  display: flex;
+}
+
 .main--header .main--nav__links {
   width: 100%;
   text-align: left;
+  display: block;
 }
 .main--header .main--nav__links .up--link {
   display: block;
@@ -3646,23 +3651,48 @@ white-space: nowrap;
 }
 
 .main--header .nav__toggle{
-  background-color: var(--primary);
-  padding: 11px;
+  background-color: var(--primary); 
   position: absolute;
   right: 5vw; 
-  top: 16%; 
+  top: 50%;
+  width: 45px;
+  height: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
-
+.main--header .nav__toggle .bar--wrapper{
+  width: 60%;
+  position: relative;
+}
 .main--header .nav__toggle .nav__toggle-bar{
   width: 100%;
-  height: 2px;
+  height: 3px;
   display: block;
   position: relative;
   background: var(--ful__white);
   transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   transition-delay: 0s;
-  margin: 10px;
+  margin: 5px auto;
 }
+
+.main--header .nav__toggle.open .nav__toggle-bar:first-child{
+  transform:translateY(-100%) rotate(45deg);
+  position: absolute;
+  top: 0;
+  }
+  
+  .main--header .nav__toggle.open .nav__toggle-bar:last-child{
+    transform:translateY(-100%) rotate(-45deg);
+    position: absolute;
+    top: 0;
+    }
+
+
 .overlay--box .container {
   height: 385px;
   flex-direction: column;
