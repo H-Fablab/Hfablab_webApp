@@ -33,7 +33,7 @@
                 <div class="post--body">
                     <div class="cat--labels">
                          {{#each this.cat__label}}
-                        <span class="category--label">{{this}}</span>
+                         <span class="category--label">{{this}}</span>
                          {{/each}}
                     </div>
 
@@ -41,7 +41,7 @@
                         {{this.title}}
                     </h4>
 
-                    <a class="underlined--btn" href="/post--xx--xx">Découvrir</a>
+                    <a class="underlined--btn" href="/blog/{{this._id}}">Lire l'article</a>
                 </div>
              </div>
              {{/each}}

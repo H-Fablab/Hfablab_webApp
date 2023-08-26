@@ -254,14 +254,35 @@ router.get('/form-donation-materiel', (req, res)=>{
     })
 
 })
+router.get('/blog/4556777654ffbfa', (req, res)=>{
+    const locals ={
+        page__title :"Nos actualités",
+        base__attr: "../",
+        hero__label: 'Blog',
+        hero__title: 'Nos actualités', 
+    }
+    res.render('blog_posts/4556777654ffbfa', locals)
 
-router.get('/blog/post--xx--xx', (req, res)=>{
-    res.render('pages/post', {
-        page__title :"Reserver une machine",
-        banner__image: "Rectangle 5982.png",
-        base__attr: "../"
-        
-    })
+})
+
+router.get('/blog/4556777654ffcfb', (req, res)=>{
+    const locals ={
+        page__title :"Nos actualités",
+        base__attr: "../",
+        hero__label: 'Blog',
+        hero__title: 'Nos actualités', 
+    }
+    res.render('blog_posts/4556777654ffbfc', locals)
+
+})
+router.get('/blog/4556777654ffcfd', (req, res)=>{
+    const locals ={
+        page__title :"Nos actualités",
+        base__attr: "../",
+        hero__label: 'Blog',
+        hero__title: 'Nos actualités', 
+    }
+    res.render('blog_posts/4556777654ffbfd', locals)
 
 })
 
