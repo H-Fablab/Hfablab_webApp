@@ -7,11 +7,69 @@ router.get('/', (req, res)=>{
 })
 
 router.get('/blog', (req, res)=>{
-    res.render('pages/blog', {
-    page__title :"Nos actualités",
-    hero__label: 'Blog',
-    hero__title: 'Nos actualités',
-    hero__subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam <br class="blog--xxl__separator"> en Côte d’ivoire et dans la sous région'})
+    const locals ={
+        page__title :"Nos actualités",
+        base__attr: "../",
+        hero__label: 'Blog',
+        hero__title: 'Nos actualités',
+        hero__subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam <br class="blog--xxl__separator"> en Côte d’ivoire et dans la sous région',
+        posts_data : 
+            [
+                {
+                    "_id":"4556777654ffbfa",
+                    "title":"Cultiver l'Avenir : Une Unité de Culture Hydroponique innovante de H-FABLAB en Côte d'Ivoire",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/H-Fablab_image-2.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfb",
+                    "title":"De l'Idée à la Réalité : Mise en Place d'une Couveuse Hybride Écologique par l'Équipe H-FABLAB",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/H-Fablab_image-2.jpg",
+                    "cat__label":["Electroniaue", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfc",
+                    "title":"Fabriquer un Déshydrateur de Fruits et Légumes Économique",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/H-Fablab_image-2.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfd",
+                    "title":"Découvrez les temps forts du TECH CAMP de l'été 2022!",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/H-Fablab_image-2.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                }
+            ]
+    }
+
+
+res.render('pages/blog', {locals})
+   
+   
 })
 
 router.get('/nos-projets', (req, res)=>{
@@ -197,10 +255,11 @@ router.get('/form-donation-materiel', (req, res)=>{
 
 })
 
-router.get('/post--xx--xx', (req, res)=>{
+router.get('/blog/post--xx--xx', (req, res)=>{
     res.render('pages/post', {
         page__title :"Reserver une machine",
         banner__image: "Rectangle 5982.png",
+        base__attr: "../"
         
     })
 

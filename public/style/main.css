@@ -964,7 +964,7 @@ justify-content: space-between;
 }
 
 .back--overlay {
-  background:url(../images/overlay-box.png);
+  background:url(../images/hfablab-activityBanner.jpg);
   position: relative;
   background-position: center;
   background-repeat: no-repeat;
@@ -1008,6 +1008,9 @@ justify-content: space-between;
   border: 1px solid var(--overlay);
   min-height: 295px;
   flex: 0 1 calc(25% - 15px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .activity--item h4{
@@ -1015,10 +1018,9 @@ justify-content: space-between;
   margin-bottom: 1rem;
 }
 
+
 .activity--item img {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
+ width: 70px;
 }
 
 
@@ -1656,7 +1658,7 @@ margin-left: 0;
   border: 1px solid var(--black);
   align-items: center;
   margin-bottom: 2rem;
-  border-radius: 50px;
+  border-radius: 25px;
 }
 
 .project--list__wrapper .project--item .col--unit__6{
@@ -1666,7 +1668,7 @@ margin-left: 0;
 .project--list__wrapper .project--item .image-box img{
   height: 200px;
   object-fit: cover;
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
 .project--list__wrapper .project--item .title--group{
@@ -1947,7 +1949,7 @@ color: var(--secondary);
   align-items: flex-start;
 }
 
-.our--workshop .workshop--link{
+.content--link{
   color: var(--secondary);
   text-decoration: underline;
 }
@@ -2090,6 +2092,7 @@ margin-top: 1.5rem;
   position: relative;
   border-radius:8px ;
   flex: 0 1 calc(25% - 1rem);
+  transition: all .5s ease-in-out;
   
 }
 
@@ -2127,6 +2130,26 @@ margin-top: 1.5rem;
 
 .our--team .team--members .member--box .member--role{
   font-weight: bold;
+}
+
+.our--team .team--members .member--box .social--link {
+ width: 35px;;
+  border-radius: 50%;
+  border: 1px solid var(--ful__white);
+  aspect-ratio: 1/1;
+  display: grid;
+  place-content: center;
+  margin-top: 1rem;
+}
+
+.our--team .team--members .member--box .icon--wrap{
+  display: none;
+}
+
+
+.our--team .team--members .member--box:hover .icon--wrap{
+  display: block;
+  transition: all .5s ease-in-out;
 }
 
 /*
