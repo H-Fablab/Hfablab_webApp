@@ -5,12 +5,12 @@
 <section class="section--wrapper blog--post ">
     <div class="container">
         <div class="post--hero">
-            <img class="cover--img" src="images/post--cover.jpg" alt="post cover image" srcset="">
+            <img class="cover--img" src="images/blog/IMG_20221001_142133_391.jpg" alt="post cover image" srcset="">
         </div>
         <div class="post--content">
             <div class="post--infos post--padding">
                 <div class="author">
-                    <img class="author--img" src="images/Rectangle 23 (2).png" alt="Post author" srcset="">
+                    <img class="author--img" src="images/team/Honou_Koffi Dodji_Photo2.jpg" alt="Post author" srcset="">
                 <p class="author--name"><strong>Auteur: </strong> Dodji Honou</p>
                 </div>
                 <p class="post--date"><strong>Publié le: </strong>24 Août 2023</p>
@@ -41,16 +41,21 @@
                 <p class="paragraph">L'atelier a rassemblé une équipe de 20 participants aux profils variés, répartis en deux groupes : l'un axé sur la partie électronique et l'autre sur la partie mécanique. L'objectif était d'apprendre ensemble et de co-construire une solution locale pratique et efficace.</p>
                 <p class="paragraph">Le déshydrateur a été construit à partir de matériaux simples et accessibles. Pour commencer, des plaques de contreplaqué de différentes dimensions ont été découpées pour former les côtés, l'avant, l'arrière, le dessus et le dessous de l'appareil. Une fois assemblées avec de la colle à bois, des clous ou des vis, les parois intérieures ont été revêtues d'un matériau isolant, en l'occurrence du papier aluminium autocollant, souvent utilisé pour les cuisines.</p>
                 <p class="paragraph">Un aspect essentiel était la création d'étagères sur lesquelles les fruits et légumes seraient disposés pour le processus de déshydratation. De fines baguettes de bois et du grillage perforé (type moustiquaire) ont été utilisés pour construire les étagères. Deux ouvertures ont été aménagées à l'arrière du dispositif : l'une pour assembler la boîte électronique et l'autre pour le tuyau de la cheminée, qui permet de créer une circulation d'air chaud.</p>
+                 <div class="img--block">
+                    <img src="images/blog/IMG_20221001_142623_714.jpg" alt="" srcset="">
+                    <span class="img--legend"> Spring in Japan lasts from about mid </span>
+                </div>
                 <p class="paragraph">La cheminée était une pièce centrale du déshydrateur. Elle était construite avec un tuyau PVC, des baguettes en bois pour guider l'air chaud, et une vitre transparente pour contrôler le flux d'air. Ce système hybride pouvait fonctionner à l'électricité ou à l'énergie solaire, rendant l'appareil idéal pour les zones non électrifiées.</p>
+                 <div class="img--block">
+                    <img src="images/blog/IMG_20221006_193130_163.jpg" alt="" srcset="">
+                    <span class="img--legend"> Spring in Japan lasts from about mid </span>
+                </div>
                 <p class="paragraph">Le cœur électronique du déshydrateur était logé dans un boîtier en bois spécialement conçu. Ce boîtier contenait une carte Arduino, un potentiomètre, un relais, un afficheur LCD, un capteur d'humidité et une lampe chauffante. Ces composants étaient responsables de la régulation de la température et du chauffage, assurant ainsi un processus de déshydratation optimal.</p>
                 <p class="paragraph">Une fois assemblé, le déshydrateur était prêt à être utilisé pour conserver les fruits et légumes de manière économique et respectueuse de l'environnement. Cette initiative démontre comment des solutions locales et abordables peuvent avoir un impact significatif sur la réduction du gaspillage alimentaire tout en favorisant le développement durable.</p>
                 <p class="paragraph">En somme, l'atelier de fabrication de ce déshydrateur de fruits et légumes a été une expérience enrichissante qui a permis aux participants d'apprendre, de collaborer et de créer une solution pratique et éco-responsable. Un exemple concret de la manière dont la créativité et l'innovation peuvent s'allier pour résoudre des problèmes mondiaux cruciaux.</p>
 
                 <p class="paragraph"><strong>Lien vers la Documentation:</strong><a class="content--link" href="https://forgecc.org/?DeshydrateurDeFruitEtLegume2">https://forgecc.org/?DeshydrateurDeFruitEtLegume2</a></p>
-                 <div class="img--block">
-                    <img src="images/project.webp" alt="" srcset="">
-                    <span class="img--legend"> Spring in Japan lasts from about mid </span>
-                </div>
+                
             </div>
 
             <div class="main--content  post--padding post--footer ">
@@ -82,54 +87,33 @@
                     </div>
                     
                     <div class="blog--posts__wrapper flex--container">
-                        <div class="col--unit__6 post--item">
-                            <div class="img--box ">
-                                <img src="images/H-Fablab_image-2.jpg" alt="" srcset="">
-                                <div class="date--card__wrapper">
-                                <div class="date--card">
-                                        <span class="day">12</span>
-                                    <span class="month ">MAi</span>
-                                </div>
-                                </div>
-                            </div>
-
-                            <div class="post--body">
-                                <div class="cat--labels">
-                                    <span class="category--label">Business</span>
-                                    <span class="category--label">IoT</span>
+                        {{#each posts_relative_c}}
+                        <div class="col--unit__4 post--item">
+                                <div class="img--box ">
+                                    <img src="images/{{this.image}}" alt="" srcset="">
+                                    <div class="date--card__wrapper">
+                                    <div class="date--card">
+                                            <span class="day">{{this.date.jour}}</span>
+                                        <span class="month ">{{this.date.mois}}</span>
+                                    </div>
+                                    </div>
                                 </div>
 
-                                <h4 class="post--title">
-                                    La couveuse open so pour lutter contre la mortalité  urce et...
-                                </h4>
+                                <div class="post--body">
+                                    <div class="cat--labels">
+                                        {{#each this.cat__label}}
+                                        <span class="category--label">{{this}}</span>
+                                        {{/each}}
+                                    </div>
 
-                                <a class="underlined--btn" href="/post--xx--xx">Découvrir</a>
-                            </div>
-                        </div>
-                        <div class="col--unit__6 post--item">
-                            <div class="img--box ">
-                                <img src="images/H-Fablab_image-2.jpg" alt="" srcset="">
-                                <div class="date--card__wrapper">
-                                <div class="date--card">
-                                        <span class="day">12</span>
-                                    <span class="month ">MAi</span>
-                                </div>
+                                    <h4 class="post--title">
+                                        {{this.title}}
+                                    </h4>
+
+                                    <a class="underlined--btn" href="/blog/{{this._id}}">Lire l'article</a>
                                 </div>
                             </div>
-
-                            <div class="post--body">
-                                <div class="cat--labels">
-                                    <span class="category--label">Business</span>
-                                    <span class="category--label">IoT</span>
-                                </div>
-
-                                <h4 class="post--title">
-                                    La couveuse open so pour lutter contre la mortalité  urce et...
-                                </h4>
-
-                                <a class="underlined--btn" href="/post--xx--xx">Découvrir</a>
-                            </div>
-                        </div>
+                            {{/each}}
                     </div>
                 </div>
             </div>

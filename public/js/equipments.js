@@ -19,25 +19,21 @@ buttonLeft.onclick = function () {
 
 //:::::::::::: Beginning of Equipment list nav toggler:::::::::::://
 
-const tabs = document.querySelector(".equipments--container");
-const tabButton = document.querySelectorAll(".nav--tabs__links");
-const contents = document.querySelectorAll(".equipment__description");
+let tabs = document.querySelectorAll(".nav--tabs--container .nav--tabs__links");
+let tabContents = document.querySelectorAll(".equipment__description--wrapper .equipment__description");
 
-tabs.onclick = e => {
-  const id = e.target.dataset.id;
-  if (id) {
-    tabButton.forEach(btn => {
-      btn.classList.remove("active");
-    });
-    e.target.classList.add("active");
-
-    contents.forEach(content => {
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    tabContents.forEach((content) => {
       content.classList.remove("active");
     });
-    const element = document.getElementById(id);
-    element.classList.add("active");
-  }
-}
+    tabs.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+    tabContents[index].classList.add("active");
+    tabs[index].classList.add("active");
+  });
+});
 
 //:::::::::::: End of Equipment list nav toggler:::::::::::://
 

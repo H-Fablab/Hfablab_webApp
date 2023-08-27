@@ -1,3 +1,12 @@
+document.getElementById('next').onclick = function(){
+    const widthItem = document.querySelector('.post--item').offsetWidth;
+    document.getElementById('formList').scrollLeft += widthItem;
+}
+document.getElementById('prev').onclick = function(){
+    const widthItem = document.querySelector('.post--item').offsetWidth;
+    document.getElementById('formList').scrollLeft -= widthItem;
+}
+
 
 let nav__toggle = document.getElementById('nav-toggle')
 nav__toggle.onclick = e =>{
@@ -60,13 +69,6 @@ function slidefun(n) {
 
 //:::::::::::: Beginning of blog card slider:::::::::::://
 
-document.getElementById('next').onclick = function(){
-    const widthItem = document.querySelector('.post--item').offsetWidth;
-    document.getElementById('formList').scrollLeft += widthItem;
-}
-document.getElementById('prev').onclick = function(){
-    const widthItem = document.querySelector('.post--item').offsetWidth;
-    document.getElementById('formList').scrollLeft -= widthItem;
-}
+
 
 //:::::::::::: End of blog card slider:::::::::::://

@@ -23,7 +23,7 @@ router.get('/blog', (req, res)=>{
                         "mois":"Août",
                         "Année":2023
                          },
-                    "image":"blog/H-Fablab_image-2.jpg",
+                    "image":"blog/IMG_20220923_172021_142.jpg",
                     "cat__label":["Agriculture", "IoT"]
             
                 },
@@ -35,7 +35,7 @@ router.get('/blog', (req, res)=>{
                         "mois":"Août",
                         "Année":2023
                          },
-                    "image":"blog/H-Fablab_image-2.jpg",
+                    "image":"blog/Coveuse.png",
                     "cat__label":["Electroniaue", "IoT"]
             
                 },
@@ -47,7 +47,7 @@ router.get('/blog', (req, res)=>{
                         "mois":"Août",
                         "Année":2023
                          },
-                    "image":"blog/H-Fablab_image-2.jpg",
+                    "image":"blog/IMG_20221001_142133_391.jpg",
                     "cat__label":["Agriculture", "IoT"]
             
                 },
@@ -254,35 +254,142 @@ router.get('/form-donation-materiel', (req, res)=>{
     })
 
 })
-router.get('/blog/4556777654ffbfa', (req, res)=>{
+
+router.get('/blog/:id', (req, res)=>{
+    const post_slug = req.params.id
     const locals ={
         page__title :"Nos actualités",
         base__attr: "../",
         hero__label: 'Blog',
         hero__title: 'Nos actualités', 
     }
-    res.render('blog_posts/4556777654ffbfa', locals)
 
-})
-
-router.get('/blog/4556777654ffcfb', (req, res)=>{
-    const locals ={
-        page__title :"Nos actualités",
-        base__attr: "../",
-        hero__label: 'Blog',
-        hero__title: 'Nos actualités', 
+    switch (post_slug) {
+        case '4556777654ffbfa':
+          const  posts_relative_a =  
+            [
+                {
+                    "_id":"4556777654ffcfc",
+                    "title":"Fabriquer un Déshydrateur de Fruits et Légumes Économique",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/IMG_20221001_142133_391.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfd",
+                    "title":"Découvrez les temps forts du TECH CAMP de l'été 2022!",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/H-Fablab_image-2.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                }
+            ]
+        res.render('pages/4556777654ffbfa', {locals, posts_relative_a})
+        break;
+        case '4556777654ffcfb':
+            const  posts_relative_b =  
+            [
+                {
+                    "_id":"4556777654ffbfa",
+                    "title":"Cultiver l'Avenir : Une Unité de Culture Hydroponique innovante de H-FABLAB en Côte d'Ivoire",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/IMG_20220923_172021_142.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfc",
+                    "title":"Fabriquer un Déshydrateur de Fruits et Légumes Économique",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/IMG_20221001_142133_391.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                }
+            ]
+            res.render('pages/4556777654ffcfb', {locals, posts_relative_b})
+        break;
+        case '4556777654ffcfc':
+            const  posts_relative_c =  
+            [
+                {
+                    "_id":"4556777654ffcfc",
+                    "title":"Fabriquer un Déshydrateur de Fruits et Légumes Économique",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/IMG_20221001_142133_391.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfd",
+                    "title":"Découvrez les temps forts du TECH CAMP de l'été 2022!",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/H-Fablab_image-2.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                }
+            ]
+            res.render('pages/4556777654ffbfc', {locals, posts_relative_c})
+        break;
+        case '4556777654ffcfd':
+            const  posts_relative_d =  
+            [
+                {
+                    "_id":"4556777654ffbfa",
+                    "title":"Cultiver l'Avenir : Une Unité de Culture Hydroponique innovante de H-FABLAB en Côte d'Ivoire",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/IMG_20220923_172021_142.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfb",
+                    "title":"De l'Idée à la Réalité : Mise en Place d'une Couveuse Hybride Écologique par l'Équipe H-FABLAB",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/Coveuse.png",
+                    "cat__label":["Electroniaue", "IoT"]
+            
+                }
+            ]
+            res.render('pages/4556777654ffbfd', {locals, posts_relative_d})
+        break;
+      
+        default:
+        res.render('pages/blog', {locals})
     }
-    res.render('blog_posts/4556777654ffbfc', locals)
 
-})
-router.get('/blog/4556777654ffcfd', (req, res)=>{
-    const locals ={
-        page__title :"Nos actualités",
-        base__attr: "../",
-        hero__label: 'Blog',
-        hero__title: 'Nos actualités', 
-    }
-    res.render('blog_posts/4556777654ffbfd', locals)
 
 })
 
