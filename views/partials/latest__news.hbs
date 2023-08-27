@@ -13,129 +13,34 @@
 
          <div id="formList">
             <div id="list">
-                <div class="item post--item">
-                    <div class="img--box ">
-                        <img src="images/H-Fablab_image-2.jpg" alt="" srcset="">
-                        <div class="date--card__wrapper">
-                        <div class="date--card">
-                                <span class="day">12</span>
-                            <span class="month ">MAi</span>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="post--body">
-                        <div class="cat--labels">
-                            <span class="category--label">Business</span>
-                            <span class="category--label">IoT</span>
-                        </div>
-
-                        <h4 class="post--title">
-                            La couveuse open so pour lutter contre la mortalité  urce et...
-                        </h4>
-
-                        <a class="underlined--btn" href="http://">Découvrir</a>
-                    </div>
-                </div>
-                <div class="item post--item">
-                    <div class="img--box ">
-                        <img src="images/H-Fablab_image-2.jpg" alt="" srcset="">
-                        <div class="date--card__wrapper">
-                        <div class="date--card">
-                                <span class="day">12</span>
-                            <span class="month ">MAi</span>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="post--body">
-                        <div class="cat--labels">
-                            <span class="category--label">Business</span>
-                            <span class="category--label">IoT</span>
-                        </div>
-
-                        <h4 class="post--title">
-                            La couveuse open so pour lutter contre la mortalité  urce et...
-                        </h4>
-
-                        <a class="underlined--btn" href="/post--xx--xx">Découvrir</a>
+                 {{#each posts_data}}
+           <div class="item post--item">
+                <div class="img--box ">
+                    <img src="images/{{this.image}}" alt="" srcset="">
+                    <div class="date--card__wrapper">
+                       <div class="date--card">
+                             <span class="day">{{this.date.jour}}</span>
+                        <span class="month ">{{this.date.mois}}</span>
+                       </div>
                     </div>
                 </div>
 
-                <div class="item post--item">
-                    <div class="img--box ">
-                        <img src="images/H-Fablab_image-2.jpg" alt="" srcset="">
-                        <div class="date--card__wrapper">
-                        <div class="date--card">
-                                <span class="day">12</span>
-                            <span class="month ">MAi</span>
-                        </div>
-                        </div>
+                <div class="post--body">
+                    <div class="cat--labels">
+                         {{#each this.cat__label}}
+                         <span class="category--label">{{this}}</span>
+                         {{/each}}
                     </div>
 
-                    <div class="post--body">
-                        <div class="cat--labels">
-                            <span class="category--label">Business</span>
-                            <span class="category--label">IoT</span>
-                        </div>
+                    <h4 class="post--title">
+                        {{this.title}}
+                    </h4>
 
-                        <h4 class="post--title">
-                            La couveuse open so pour lutter contre la mortalité  urce et...
-                        </h4>
-
-                        <a class="underlined--btn" href="/post--xx--xx">Découvrir</a>
-                    </div>
+                    <a class="underlined--btn" href="/blog/{{this._id}}">Lire l'article</a>
                 </div>
+             </div>
+             {{/each}}
 
-                <div class="item post--item">
-                    <div class="img--box ">
-                        <img src="images/H-Fablab_image-2.jpg" alt="" srcset="">
-                        <div class="date--card__wrapper">
-                        <div class="date--card">
-                                <span class="day">12</span>
-                            <span class="month ">MAi</span>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="post--body">
-                        <div class="cat--labels">
-                            <span class="category--label">Business</span>
-                            <span class="category--label">IoT</span>
-                        </div>
-
-                        <h4 class="post--title">
-                            La couveuse open so pour lutter contre la mortalité  urce et...
-                        </h4>
-
-                        <a class="underlined--btn" href="/post--xx--xx">Découvrir</a>
-                    </div>
-                </div>
-
-                <div class="item post--item">
-                    <div class="img--box ">
-                        <img src="images/H-Fablab_image-2.jpg" alt="" srcset="">
-                        <div class="date--card__wrapper">
-                        <div class="date--card">
-                                <span class="day">12</span>
-                            <span class="month ">MAi</span>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="post--body">
-                        <div class="cat--labels">
-                            <span class="category--label">Business</span>
-                            <span class="category--label">IoT</span>
-                        </div>
-
-                        <h4 class="post--title">
-                            La couveuse open so pour lutter contre la mortalité  urce et...
-                        </h4>
-
-                        <a class="underlined--btn" href="/post--xx--xx">Découvrir</a>
-                    </div>
-                </div>
             </div>
         </div>
 

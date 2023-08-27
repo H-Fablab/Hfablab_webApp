@@ -3,7 +3,57 @@ const path = require('path')
 const router = express.Router()
 
 router.get('/', (req, res)=>{
-    res.render('pages/home', {page__title :"Home page"})
+    res.render('pages/home', {page__title :"Home page",  posts_data :
+    [
+        {
+            "_id":"4556777654ffbfa",
+            "title":"Cultiver l'Avenir : Une Unité de Culture Hydroponique innovante de H-FABLAB en Côte d'Ivoire",
+            "date":{
+                "jour":25,
+                "mois":"Août",
+                "Année":2023
+                 },
+            "image":"blog/IMG_20220923_172021_142.jpg",
+            "cat__label":["Agriculture", "IoT"]
+    
+        },
+        {
+            "_id":"4556777654ffcfb",
+            "title":"De l'Idée à la Réalité : Mise en Place d'une Couveuse Hybride Écologique par l'Équipe H-FABLAB",
+            "date":{
+                "jour":25,
+                "mois":"Août",
+                "Année":2023
+                 },
+            "image":"blog/Coveuse.PNG",
+            "cat__label":["Electroniaue", "IoT"]
+    
+        },
+        {
+            "_id":"4556777654ffcfc",
+            "title":"Fabriquer un Déshydrateur de Fruits et Légumes Économique",
+            "date":{
+                "jour":25,
+                "mois":"Août",
+                "Année":2023
+                 },
+            "image":"blog/IMG_20221001_142133_391.jpg",
+            "cat__label":["Agriculture", "IoT"]
+    
+        },
+        {
+            "_id":"4556777654ffcfd",
+            "title":"Découvrez les temps forts du TECH CAMP de l'été 2022!",
+            "date":{
+                "jour":25,
+                "mois":"Août",
+                "Année":2023
+                 },
+            "image":"blog/H-Fablab_image-2.jpg",
+            "cat__label":["Agriculture", "IoT"]
+    
+        }
+    ]})
 })
 
 router.get('/blog', (req, res)=>{
@@ -35,7 +85,7 @@ router.get('/blog', (req, res)=>{
                         "mois":"Août",
                         "Année":2023
                          },
-                    "image":"blog/Coveuse.png",
+                    "image":"blog/Coveuse.PNG",
                     "cat__label":["Electroniaue", "IoT"]
             
                 },
@@ -78,7 +128,58 @@ router.get('/nos-projets', (req, res)=>{
             banner__image: "project.webp",
             hero__label: 'Projets',
             hero__title: 'Nos projets',
-            hero__subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam <br class="blog--xxl__separator"> en Côte d’ivoire et dans la sous région'
+            hero__subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam <br class="blog--xxl__separator"> en Côte d’ivoire et dans la sous région',  
+            posts_data : 
+            [
+                {
+                    "_id":"4556777654ffbfa",
+                    "title":"Cultiver l'Avenir : Une Unité de Culture Hydroponique innovante de H-FABLAB en Côte d'Ivoire",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/IMG_20220923_172021_142.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfb",
+                    "title":"De l'Idée à la Réalité : Mise en Place d'une Couveuse Hybride Écologique par l'Équipe H-FABLAB",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/Coveuse.PNG",
+                    "cat__label":["Electroniaue", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfc",
+                    "title":"Fabriquer un Déshydrateur de Fruits et Légumes Économique",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/IMG_20221001_142133_391.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfd",
+                    "title":"Découvrez les temps forts du TECH CAMP de l'été 2022!",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/H-Fablab_image-2.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                }
+            ]
     })
 })
 
@@ -89,7 +190,58 @@ router.get('/agenda', (req, res)=>{
         hero__label: 'Agenda',
         hero__title: 'Nos évènements du mois',
         hero__subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br class="blog--xxl__separator"> Etiam eu turpis molestie, dictum es', 
-        page__script: '<script type="module" src="js/events.js"></script>'
+        page__script: '<script type="module" src="js/events.js"></script>', 
+        posts_data : 
+        [
+            {
+                "_id":"4556777654ffbfa",
+                "title":"Cultiver l'Avenir : Une Unité de Culture Hydroponique innovante de H-FABLAB en Côte d'Ivoire",
+                "date":{
+                    "jour":25,
+                    "mois":"Août",
+                    "Année":2023
+                     },
+                "image":"blog/IMG_20220923_172021_142.jpg",
+                "cat__label":["Agriculture", "IoT"]
+        
+            },
+            {
+                "_id":"4556777654ffcfb",
+                "title":"De l'Idée à la Réalité : Mise en Place d'une Couveuse Hybride Écologique par l'Équipe H-FABLAB",
+                "date":{
+                    "jour":25,
+                    "mois":"Août",
+                    "Année":2023
+                     },
+                "image":"blog/Coveuse.PNG",
+                "cat__label":["Electroniaue", "IoT"]
+        
+            },
+            {
+                "_id":"4556777654ffcfc",
+                "title":"Fabriquer un Déshydrateur de Fruits et Légumes Économique",
+                "date":{
+                    "jour":25,
+                    "mois":"Août",
+                    "Année":2023
+                     },
+                "image":"blog/IMG_20221001_142133_391.jpg",
+                "cat__label":["Agriculture", "IoT"]
+        
+            },
+            {
+                "_id":"4556777654ffcfd",
+                "title":"Découvrez les temps forts du TECH CAMP de l'été 2022!",
+                "date":{
+                    "jour":25,
+                    "mois":"Août",
+                    "Année":2023
+                     },
+                "image":"blog/H-Fablab_image-2.jpg",
+                "cat__label":["Agriculture", "IoT"]
+        
+            }
+        ]
     })
 
 })
@@ -101,7 +253,58 @@ router.get('/ateliers', (req, res)=>{
         hero__label: 'Atelier',
         hero__title: 'Aprréhendez le numérique  <br class="blog--xxl__separator"> grâce à nos ateliers',
         hero__subtitle: 'Nous organisons différentes formations numériques gratuites <br class="blog--xxl__separator"> en Côte d’ivoire et dans la sous région',
-        page__script: '<script type="module" src="js/atelier.js"></script>'
+        page__script: '<script type="module" src="js/atelier.js"></script>',
+         posts_data : 
+            [
+                {
+                    "_id":"4556777654ffbfa",
+                    "title":"Cultiver l'Avenir : Une Unité de Culture Hydroponique innovante de H-FABLAB en Côte d'Ivoire",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/IMG_20220923_172021_142.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfb",
+                    "title":"De l'Idée à la Réalité : Mise en Place d'une Couveuse Hybride Écologique par l'Équipe H-FABLAB",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/Coveuse.PNG",
+                    "cat__label":["Electroniaue", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfc",
+                    "title":"Fabriquer un Déshydrateur de Fruits et Légumes Économique",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/IMG_20221001_142133_391.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfd",
+                    "title":"Découvrez les temps forts du TECH CAMP de l'été 2022!",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/H-Fablab_image-2.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                }
+            ]
     })
 
 })
@@ -147,7 +350,58 @@ router.get('/domaines-d-expertise', (req, res)=>{
         hero__label: 'Expertise',
         banner__image: "55910121_914414448910557_1748538231957225472_n.jpg",
         hero__title: 'Domaines d’expertise',
-        hero__subtitle: 'Nous organisons différentes formations numériques gratuites <br class="blog--xxl__separator"> eu turpis molestie, dictum es'
+        hero__subtitle: 'Nous organisons différentes formations numériques gratuites <br class="blog--xxl__separator"> eu turpis molestie, dictum es',
+         posts_data : 
+            [
+                {
+                    "_id":"4556777654ffbfa",
+                    "title":"Cultiver l'Avenir : Une Unité de Culture Hydroponique innovante de H-FABLAB en Côte d'Ivoire",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/IMG_20220923_172021_142.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfb",
+                    "title":"De l'Idée à la Réalité : Mise en Place d'une Couveuse Hybride Écologique par l'Équipe H-FABLAB",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/Coveuse.PNG",
+                    "cat__label":["Electroniaue", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfc",
+                    "title":"Fabriquer un Déshydrateur de Fruits et Légumes Économique",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/IMG_20221001_142133_391.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                },
+                {
+                    "_id":"4556777654ffcfd",
+                    "title":"Découvrez les temps forts du TECH CAMP de l'été 2022!",
+                    "date":{
+                        "jour":25,
+                        "mois":"Août",
+                        "Année":2023
+                         },
+                    "image":"blog/H-Fablab_image-2.jpg",
+                    "cat__label":["Agriculture", "IoT"]
+            
+                }
+            ]
     })
 
 })

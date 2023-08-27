@@ -666,7 +666,7 @@ input.check-toggle-round-flat:checked ~ .on {
 }
 
 input.check-toggle-round-flat + label {
-  padding: 2px;
+  padding: 1px;
   width: 97px;
   height: 35px;
   background-color: var(--primary);

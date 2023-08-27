@@ -13,6 +13,8 @@ app.engine('hbs', exphbs.engine({
 }))
 app.set('view engine', 'hbs')
 
+
+
 app.use("/", pagesRoutes);
 app.use("/", userRoutes);
 
