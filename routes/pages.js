@@ -313,7 +313,7 @@ router.get('/ateliers', (req, res)=>{
 router.get('/faire-un-don', (req, res)=>{
     res.render('pages/donate', {
         page__title :"Faire un don", 
-        banner__image: "img3.jpg",
+        banner__image: "H-FabLab-Abidjan-Slide-2.jpg",
         hero__label: 'Faire un don',
         hero__title: 'Nous soutenir',
        
