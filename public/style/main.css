@@ -3,7 +3,9 @@
 *::after {
   box-sizing: border-box;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body,
 h1,
 h2,
@@ -2327,11 +2329,17 @@ margin-top: 1.5rem;
 }
  
 
-.main--contact__section .contact--details h2{
+.contact--us .contact--details h2{
 margin-bottom: 4rem;
 }
 
- 
+.inner--hero.contact--us .content .header--text__container h1{
+  color: var(--primary);
+}
+
+.inner--hero.contact--us .content .contact--box{
+  color: var(--primary-8);
+}
 
 .main--contact__section .contact--details .address--box{
   gap: 2rem;
@@ -2720,7 +2728,9 @@ padding: 1rem 2rem;
   transform: translateY(-6.5rem);
 
 }
-
+.blog--post .post--content .paragraph{
+  color: var(--primary-8);
+}
 .post--padding{
   padding:0 2rem;
 }
@@ -2791,6 +2801,15 @@ padding: 1rem 2rem;
  }
  .blog--post .post--content .img--block {
   margin: 2rem 0;
+ }
+
+
+ .blog--post .post--content .video--block {
+  margin: 2rem 0;
+ }
+
+ .blog--post .post--content .video--block iframe {
+  width: 100%;
  }
 
  .blog--post .post--content .img--block .img--legend{
