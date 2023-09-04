@@ -1,16 +1,15 @@
-<section class="inner--hero about section--margin">
-    {{> header}}
-    <div class="header--title__container">
-        <span class="pastille--label pastille--label__black">{{{hero__label}}}</span>
-      <h2>{{{hero__title}}}</h2>
-     </div>
-
-     <div class="hero--banner">
+{{> main__nav}}
+<section class="inner--hero inner--hero__bloc mt-7  about section--margin mt-2">
+         <div class="hero--banner">
                 <img src="images/{{{banner__image}}}" alt="" srcset="">
-                <div class="dark--separator"></div>
-     </div>
-
+                 <div class="header--text__container">
+                        <h1>{{{hero__title}}}</h1>
+                        <p>{{{hero__subtitle}}}</p>
+                    </div>
+                 <div class="dark--separator"></div>
+        </div>  
 </section>
+
 
 <section class="section--wrapper about--us bg--light mt-8">
     <div class="container">

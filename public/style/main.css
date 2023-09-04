@@ -854,10 +854,11 @@ justify-content: space-between;
 	width: 100%;
 }
 .home--hero .myslide{
-	height: calc(100vh - 7rem);
+	height: calc(100vh - 12rem);
 	display: none;
 	overflow: hidden;
   position: relative;
+  margin-top: 5.6rem;
 }
 
 .home--hero .myslide::after{
@@ -3531,6 +3532,14 @@ height: 30px;
   position: relative;
 }
 
+.model--list__wrapper .model--item.active {
+  flex-direction: column;
+  align-items: center;
+}
+
+.model--list__wrapper .model--item.active .modele--type{
+  margin-bottom: 2rem;
+}
 .model--list__wrapper .model--item .ul--listing{
   padding-left: 12px;
 }
@@ -3780,6 +3789,10 @@ margin-right: 7rem;
 .inner--hero {
   margin-bottom: 2rem;
 }
+
+.inner--hero.mt-7 {
+  margin-top: 7rem;
+}
 .menu--content__group.active{
   display: flex;
 }
@@ -3972,6 +3985,20 @@ h2 {
 .inner--hero__bloc .hero--banner {
   position: relative;
   height: 300px;
+}
+
+.inner--hero__bloc.about .hero--banner {
+  height: 390px;
+}
+
+.inner--hero__bloc.about .header--text__container{
+  padding: 1rem;
+} 
+
+.inner--hero__bloc.about .header--text__container h1{
+  font-size: 2rem;
+  word-wrap: break-word;
+
 }
 .inner--hero nav::after {
   left: 0;
@@ -4184,6 +4211,10 @@ h2 {
 .equipment__description--container .img--wrapper{
   padding-right: 1rem;
  }
+
+ .model--list__wrapper .model--item.active .model--content{
+  max-width: 70%;
+}
 }
 
 @media screen and (max-width:767.98px){
