@@ -2218,6 +2218,13 @@ margin-top: 1.5rem;
   gap: 50px;
 }
 
+
+.about--us .upper__content img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
 .about--us .image__wrapper .col--unit__4{
   flex: 0 1 calc(33.33333% - 50px);
 }
@@ -2600,6 +2607,10 @@ padding: 1rem 2rem;
 
 .main--equipments .button--group {
   gap: 2rem;
+}
+
+.equipment__description--container .img--wrapper> img{
+  margin: auto;
 }
 
 .expertise .item--wrapper .item--box .icon--group svg{
@@ -3640,6 +3651,14 @@ margin-right: 7rem;
 .model--list__wrapper .model--item.active .model--content{
   display: block;
 }
+
+.model--list__wrapper .model--item.active .model--content > img{
+  margin: auto;
+  max-height: 500px;
+  margin-bottom: 1rem;
+}
+
+
 
 .model--list__wrapper .model--item.active .collapse--btn .svg--closed{
   display: none;

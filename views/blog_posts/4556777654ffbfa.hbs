@@ -5,12 +5,12 @@
 <section class="section--wrapper blog--post ">
     <div class="container">
         <div class="post--hero">
-            <img class="cover--img" src="images/post--cover.jpg" alt="post cover image" srcset="">
+            <img class="cover--img" src="images/blog/IMG_20220923_172021_142.jpg" alt="post cover image" srcset="">
         </div>
         <div class="post--content">
             <div class="post--infos post--padding">
                 <div class="author">
-                    <img class="author--img" src="images/Rectangle 23 (2).png" alt="Post author" srcset="">
+                    <img class="author--img" src="images/team/Honou_Koffi Dodji_Photo2.jpg" alt="Post author" srcset="">
                 <p class="author--name"><strong>Auteur: </strong> Dodji Honou</p>
                 </div>
                 <p class="post--date"><strong>Publié le: </strong>24 Août 2023</p>
@@ -49,7 +49,7 @@
                 <h4 class="h4">Impact et Perspectives:</h4>
                 <p class="paragraph">L'H-FABLAB a prouvé que l'innovation et la créativité peuvent révolutionner l'agriculture. Cette unité de culture hydroponique sert d'exemple inspirant pour la jeunesse africaine et offre un potentiel énorme pour revitaliser l'agriculture en adoptant des pratiques durables et modernes.</p>
                  <div class="img--block">
-                    <img src="images/project.webp" alt="" srcset="">
+                    <img src="images/blog/IMG_20220923_103624_626.jpg" alt="" srcset="">
                     <span class="img--legend"> Spring in Japan lasts from about mid </span>
                 </div>
                 <p class="paragraph">En résumé, l'H-FABLAB en Côte d'Ivoire a ouvert la voie à un avenir agricole prometteur en présentant une unité de culture hydroponique ingénieuse et écologique. Cette initiative prouve que des solutions novatrices peuvent résoudre des défis anciens et transformer l'agriculture traditionnelle en une entreprise durable et passionnante. Pour en savoir plus sur cette initiative et ses impacts, visitez le site de la Forge d'Adaptations Nord-Sud : <a href="https://forgecc.org/?MiseEnPlaceDuneUniteDeCultureIntensive2 ">https://forgecc.org/?MiseEnPlaceDuneUniteDeCultureIntensive2</a></p>
@@ -83,55 +83,35 @@
                     </div>
                     </div>
                     
-                    <div class="blog--posts__wrapper flex--container">
+                       <div class="blog--posts__wrapper flex--container">
+                       {{#each relative_posts}}
                         <div class="col--unit__6 post--item">
-                            <div class="img--box ">
-                                <img src="images/H-Fablab_image-2.jpg" alt="" srcset="">
-                                <div class="date--card__wrapper">
-                                <div class="date--card">
-                                        <span class="day">12</span>
-                                    <span class="month ">MAi</span>
-                                </div>
-                                </div>
-                            </div>
-
-                            <div class="post--body">
-                                <div class="cat--labels">
-                                    <span class="category--label">Business</span>
-                                    <span class="category--label">IoT</span>
+                                <div class="img--box ">
+                                    <img src="images/{{this.image}}" alt="" srcset="">
+                                    <div class="date--card__wrapper">
+                                    <div class="date--card">
+                                            <span class="day">{{this.date.jour}}</span>
+                                        <span class="month ">{{this.date.mois}}</span>
+                                    </div>
+                                    </div>
                                 </div>
 
-                                <h4 class="post--title">
-                                    La couveuse open so pour lutter contre la mortalité  urce et...
-                                </h4>
+                                <div class="post--body">
+                                    <div class="cat--labels">
+                                        {{#each this.cat__label}}
+                                        <span class="category--label">{{this}}</span>
+                                        {{/each}}
+                                    </div>
 
-                                <a class="underlined--btn" href="/post--xx--xx">Découvrir</a>
-                            </div>
-                        </div>
-                        <div class="col--unit__6 post--item">
-                            <div class="img--box ">
-                                <img src="images/H-Fablab_image-2.jpg" alt="" srcset="">
-                                <div class="date--card__wrapper">
-                                <div class="date--card">
-                                        <span class="day">12</span>
-                                    <span class="month ">MAi</span>
-                                </div>
+                                    <a href="/blog/{{this._id}}">
+                                        <h4 class="post--title">
+                                            {{this.title}}
+                                        </h4>
+                                    </a>
+                                    <a class="underlined--btn" href="/blog/{{this._id}}">Lire l'article</a>
                                 </div>
                             </div>
-
-                            <div class="post--body">
-                                <div class="cat--labels">
-                                    <span class="category--label">Business</span>
-                                    <span class="category--label">IoT</span>
-                                </div>
-
-                                <h4 class="post--title">
-                                    La couveuse open so pour lutter contre la mortalité  urce et...
-                                </h4>
-
-                                <a class="underlined--btn" href="/post--xx--xx">Découvrir</a>
-                            </div>
-                        </div>
+                            {{/each}}
                     </div>
                 </div>
             </div>
@@ -140,7 +120,6 @@
         </div>
     </div>
 </section>
-
 
 
 {{> main__footer}}

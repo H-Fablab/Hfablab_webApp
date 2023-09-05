@@ -1,0 +1,28 @@
+{"blog_posts": [
+    {
+        "_id":"4556777654ffcfc",
+        "title":"Fabriquer un Déshydrateur de Fruits et Légumes Économique",
+        "full_title":"Fabriquer un Déshydrateur de Fruits et Légumes Économique",
+        "date":{
+            "jour":25,
+            "mois":"Août",
+            "Année":2023
+             },
+        "image":"blog/IMG_20221001_142133_391.jpg",
+        "cat__label":["Agriculture", "IoT"]
+
+    },
+    {
+        "_id":"4556777654ffcfd",
+        "title":"Découvrez les temps forts du TECH CAMP de l'été 2022!",
+        "full_title":"Découvrez les temps forts du TECH CAMP de l'été 2022!",
+        "date":{
+            "jour":25,
+            "mois":"Août",
+            "Année":2023
+             },
+        "image":"blog/H-Fablab_image-2.jpg",
+        "cat__label":["Agriculture", "IoT"]
+
+    }
+]}
