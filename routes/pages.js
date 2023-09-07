@@ -249,8 +249,6 @@ function renderBlog_post(req, res) {
     res.render('blog_posts/' + req.params.id, {locals , relative_posts: data.blog_posts});
   }
 
-  
-// Route for '/liste-equipement'
 router.get('/blog/:id', (req, res) => {
     renderBlog_post(req, res);
 });

@@ -1,9 +1,11 @@
-require("dotenv").config()
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars')
 const path = require('path')
 app.use(express.static('./public'))
+
+const port = process.env.PORT || 3000 ; 
 
 const pagesRoutes = require("./routes/pages");
 const userRoutes = require("./routes/user");
@@ -19,8 +21,8 @@ app.use("/", pagesRoutes);
 app.use("/", userRoutes);
 
 
-const port = process.env.PORT || 3000 ; 
+
 app.listen(port, ()=>{
-    console.log(`App running at port listening on port ${port}`)
+    console.log(`App running at http://localhost:${port}`)
 })
 
