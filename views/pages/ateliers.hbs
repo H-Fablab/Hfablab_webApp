@@ -1,18 +1,14 @@
-<section class="inner--hero section--margin workshop"> 
-    {{>header}}
-    <div class="content">
+{{> main__nav}}
+<section class="inner--hero inner--hero__bloc inner--hero_section section--margin mt-7">
          <div class="hero--banner">
                 <img src="images/{{{locals.banner__image}}}" alt="" srcset="">
-                <div class="dark--separator">
-            </div>
-     </div>
-        <div class="header--text__container">
-            <span class="pastille--label pastille--label__black">{{{locals.hero__label}}}</span>
-            <h1>{{{locals.hero__title}}}</h1>
-          
-     </div> 
-    
-    </div> 
+                 <div class="header--text__container">
+                       <span class="pastille--label pastille--label__black">{{{locals.hero__label}}}</span>
+                       <h1>{{{locals.hero__title}}}</h1>
+                       <p>{{{locals.hero__subtitle}}}</p>
+                    </div>
+                 <div class="dark--separator"></div>
+        </div>  
 </section>
 
 
@@ -110,7 +106,7 @@
                 <div class="tab_content active" id="mod-imp-3d">
                     <h3 class="title">Fraisseuse CNC</h3>
                     <img src="images/H-FabLab-Abidjan-Slide-2.jpg" alt="">
-                    <h4 class="sub--title">Présentation</h4>
+                   {{!--  <h4 class="sub--title">Présentation</h4>
                     <p>LLorem ipsum dolor sit amet, cLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan  onsectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan   Lorem ipsum dolor sit amet, cLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan  onsectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus </p>
                     <h4 class="sub--title">Activités</h4>
                     <p>Lorem ipsum dolor sit amet, cLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan  onsectetur adipiscing elit</p>
@@ -152,7 +148,7 @@
                         <path d="M11 7H16L10 13L4 7H9V0H11V7ZM2 16H18V9H20V17C20 17.2652 19.8946 17.5196 19.7071 17.7071C19.5196 17.8946 19.2652 18 19 18H1C0.734784 18 0.48043 17.8946 0.292893 17.7071C0.105357 17.5196 0 17.2652 0 17V9H2V16Z" fill="#1C1C1E"/>
                         </svg> </span> Télécharger la brochure</a>
                         <a class="btn btn--primary" href="">S'inscrire à l'atelier</a>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="tab_content" id="scan-3d">
                       <div class="dec--list">

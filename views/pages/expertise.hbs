@@ -1,17 +1,14 @@
-<section class="inner--hero section--margin workshop"> 
-    {{>header}}
-    <div class="content">
-   <div class="header--text__container">
-      <span class="pastille--label pastille--label__black">{{{locals.hero__label}}}</span>
-            <h1>{{{locals.hero__title}}}</h1>
-              <p>{{{locals.hero__subtitle}}}</p>
-     </div> 
-     <div class="hero--banner">
+{{> main__nav}}
+<section class="inner--hero inner--hero__bloc inner--hero_section section--margin mt-7">
+         <div class="hero--banner">
                 <img src="images/{{{locals.banner__image}}}" alt="" srcset="">
-                <div class="dark--separator">
-            </div>
-     </div>
-    </div> 
+                 <div class="header--text__container">
+                       <span class="pastille--label pastille--label__black">{{{locals.hero__label}}}</span>
+                       <h1>{{{locals.hero__title}}}</h1>
+                       <p>{{{locals.hero__subtitle}}}</p>
+                    </div>
+                 <div class="dark--separator"></div>
+        </div>  
 </section>
 
 
@@ -22,7 +19,7 @@
                  <h2>Domaines d’expertise</h2>
            </div>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum es
+               ...
             </p>
         </div>
 
@@ -61,13 +58,13 @@
            <div class="title--group">
                  <h2>Décrouvrez et réservez
                     nos équipements</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam turpis molestie, dictum est a, mattis tell</p>
+                    <p>...</p>
             </div>
 
             <div class="button--group flex--container">
-                        <a class="btn btn--white btn--icon" href="http://">Découvrir nos machines </a>
+                        <a class="btn btn--white btn--icon" href="/liste-equipement">Découvrir nos machines </a>
 
-                         <a class="btn btn--bordered__white btn--icon" href="http://">Découvrir nos ateliers </a>
+                         <a class="btn btn--bordered__white btn--icon" href="/ateliers">Découvrir nos ateliers </a>
             </div>
         </div>
        <div class="img__wrapper">

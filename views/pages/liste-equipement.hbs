@@ -1,16 +1,13 @@
-<section class="inner--hero section--margin mid--content"> 
-    {{>header}}
-    <div class="content">
-        <div class="header--text__container">
-        <span class="pastille--label pastille--label__black">{{{locals.hero__label}}}</span>
-            <h1>{{{locals.hero__title}}}</h1>
-            <p>{{{locals.hero__subtitle}}}</p>
-         </div> 
+{{> main__nav}}
+<section class="inner--hero inner--hero__bloc section--margin mt-7">
          <div class="hero--banner">
-              <img src="images/{{{locals.banner__image}}}" alt="" srcset="">
-          </div>
-     </div>
-    </div> 
+                <img src="images/{{{locals.banner__image}}}" alt="" srcset="">
+                 <div class="header--text__container">
+                        <h1>{{{locals.hero__title}}}</h1>
+                        <p>{{{locals.hero__subtitle}}}</p>
+                    </div>
+                 <div class="dark--separator"></div>
+        </div>  
 </section>
 
 <section class="section--wrapper  equipment mb-5">
@@ -46,8 +43,8 @@
                                 <h3 class="equipment--title">Impression 3D</h3>
                                 <p class="about__description">L'impression 3D ou fabrication additive regroupe les procédés de fabrication de pièces en volume par ajout ou agglomération de matière, par empilement de couches successives. L'impression 3D permet de réaliser un objet réel : un concepteur dessine l'objet 3D grâce à un outil de conception assistée par ordinateur (CAO). Le fichier 3D obtenu est traité par un logiciel spécifique qui organise le découpage en tranches des différentes couches nécessaires à la réalisation de la pièce. Le découpage est envoyé à l'imprimante 3D qui dépose ou solidifie la matière couche par couche jusqu'à obtenir la pièce finale.</p>
                                 <div class="desc--bottom btn--wrapper">
-                                    <a class="btn btn--primary" href="">Reserver la machine</a>
-                                    <a class="btn btn--bordered" href="">Se former</a>
+                                    <a class="btn btn--primary" href="/reservation-equipement">Reserver la machine</a>
+                                    <a class="btn btn--bordered" href="/inscription-atelier">Se former</a>
                                 </div>
                           </div>
                       </div>

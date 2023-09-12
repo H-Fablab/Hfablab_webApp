@@ -1,16 +1,15 @@
-<section class="inner--hero section--margin blog"> 
-    {{>header}}
-    <div class="content">
-        <div class="header--text__container">
-      <span class="pastille--label pastille--label__black">{{{locals.hero__label}}}</span>
-            <h1>{{{locals.hero__title}}}</h1>
-              <p>{{{locals.hero__subtitle}}}</p>
-
-     </div>
-      <div class="dark--separator"></div>
-    </div> 
+{{> main__nav}}
+<section class="inner--hero inner--hero__bloc section--margin mt-7">
+         <div class="hero--banner">
+                <img src="images/{{{locals.banner__image}}}" alt="" srcset="">
+                 <div class="header--text__container">
+                       <span class="pastille--label pastille--label__black">{{{locals.hero__label}}}</span>
+                       <h1>{{{locals.hero__title}}}</h1>
+                       <p>{{{locals.hero__subtitle}}}</p>
+                    </div>
+                 <div class="dark--separator"></div>
+        </div>  
 </section>
-
 <section class="section--wrapper blog--page">
     <div class="container">
        
@@ -35,13 +34,13 @@
                          {{/each}}
                     </div>
 
-                    <a href="/blog/{{this._id}}">
+                    <a href="/blog/post?title={{this.link_title}}&id={{this._id}}">
                                         <h4 class="post--title">
                                             {{this.title}}
                                         </h4>
                       </a>
 
-                    <a class="underlined--btn" href="/blog/{{this._id}}">Lire l'article</a>
+                    <a class="underlined--btn" href="/blog/post?title={{this.link_title}}&id={{this._id}}">Lire l'article</a>
                 </div>
              </div>
              {{/each}}

@@ -1,7 +1,6 @@
-
-<section class="inner--hero inner--hero__bloc section--margin mt-2">
-         {{>header}}
-         <div class="hero--banner content">
+{{> main__nav}}
+<section class="inner--hero inner--hero__bloc section--margin mt-7">
+         <div class="hero--banner">
                 <img src="images/{{{locals.banner__image}}}" alt="" srcset="">
                  <div class="header--text__container">
                         <h1>{{{locals.hero__title}}}</h1>
@@ -10,6 +9,7 @@
                  <div class="dark--separator"></div>
         </div>  
 </section>
+
 
     <section class="section--wrapper mt-5 mb-5 form--section">
           <div class="container flex--container">
@@ -33,17 +33,7 @@
                     </div>
                 </div>
 
-                 <div class="input--wrapper">
-                        <label for="">Choix des équipements</label>
-                         <div class="select">
-                            <select>
-                            <option value="1">Americano</option>
-                            <option value="2">Latte</option>
-                            <option value="3">Green Tea</option>
-                            </select>
-                        </div>
-                </div>
-
+                
                 <input class="btn btn--primary" type="submit" value="Submit">
             </form>
         </div>

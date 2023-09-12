@@ -48,7 +48,7 @@
 
                 <p class="paragraph">La contribution de l'équipe H-FABLAB en tant qu'association formatrice a été cruciale pour cette aventure. En collaborant avec la Fondation Orange, elle a jeté les bases d'une agriculture moderne et durable, tout en formant une nouvelle génération de concepteurs et d'innovateurs. Cette couveuse hybride représente l'union de l'expertise et de la passion pour un avenir agricole plus responsable et prometteur.</p>
                     <div class="img--block">
-                      <img src="images/blog/Coveuse.png" alt="" srcset="">
+                      <img src="images/blog/Coveuse.PNG" alt="" srcset="">
                     <span class="img--legend"> Spring in Japan lasts from about mid </span>
                 </div>
             </div>
@@ -101,12 +101,12 @@
                                         {{/each}}
                                     </div>
 
-                                    <a href="/blog/{{this._id}}">
+                                    <a href="/blog/post?title={{this.link_title}}&id={{this._id}}">
                                         <h4 class="post--title">
                                             {{this.title}}
                                         </h4>
                                     </a>
-                                    <a class="underlined--btn" href="/blog/{{this._id}}">Lire l'article</a>
+                                    <a class="underlined--btn" href="/blog/post?title={{this.link_title}}&id={{this._id}}">Lire l'article</a>
                                 </div>
                             </div>
                             {{/each}}

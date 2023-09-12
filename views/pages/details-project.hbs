@@ -1,17 +1,14 @@
-<section class="inner--hero section--margin project-details"> 
-    {{>header}}
-    <div class="content">
-        <div class="header--text__container">
-      <span class="pastille--label pastille--label__black">{{{locals.hero__label}}}</span>
-            <h1>{{{locals.hero__title}}}</h1>
-              <p>{{{locals.hero__subtitle}}}</p>
-     </div> 
-     <div class="hero--banner">
-                <img src="images/{{{banner__image}}}" alt="" srcset="">
-                <div class="dark--separator">
-            </div>
-     </div>
-    </div> 
+{{> main__nav}}
+<section class="inner--hero inner--hero__bloc project-details section--margin mt-7">
+         <div class="hero--banner">
+                <img src="images/{{{locals.banner__image}}}" alt="" srcset="">
+                 <div class="header--text__container">
+                       <span class="pastille--label pastille--label__black">{{{locals.hero__label}}}</span>
+                       <h1>{{{locals.hero__title}}}</h1>
+                       <p>{{{locals.hero__subtitle}}}</p>
+                    </div>
+                 <div class="dark--separator"></div>
+        </div>  
 </section>
 
 <section class="section--wrapper project--desc mt-5">

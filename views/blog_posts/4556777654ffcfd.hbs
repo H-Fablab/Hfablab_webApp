@@ -92,19 +92,19 @@
                                     </div>
                                 </div>
 
-                                <div class="post--body">
+                                 <div class="post--body">
                                     <div class="cat--labels">
                                         {{#each this.cat__label}}
                                         <span class="category--label">{{this}}</span>
                                         {{/each}}
                                     </div>
 
-                                    <a href="/blog/{{this._id}}">
+                                    <a href="/blog/post?title={{this.link_title}}&id={{this._id}}">
                                         <h4 class="post--title">
                                             {{this.title}}
                                         </h4>
                                     </a>
-                                    <a class="underlined--btn" href="/blog/{{this._id}}">Lire l'article</a>
+                                    <a class="underlined--btn" href="/blog/post?title={{this.link_title}}&id={{this._id}}">Lire l'article</a>
                                 </div>
                             </div>
                             {{/each}}

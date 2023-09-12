@@ -19,9 +19,10 @@ router.get('/blog', (req, res)=>{
     const locals ={
         page__title :"Nos actualités",
         base__attr: "../",
+        banner__image: "project.webp",
         hero__label: 'Blog',
         hero__title: 'Nos actualités',
-        hero__subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam <br class="blog--xxl__separator"> en Côte d’ivoire et dans la sous région',
+        hero__subtitle: '...',
     }
     const rawData = fs.readFileSync('blog__posts.json');
     const data = JSON.parse(rawData);
@@ -36,7 +37,7 @@ router.get('/nos-projets', (req, res)=>{
         banner__image: "project.webp",
         hero__label: 'Projets',
         hero__title: 'Nos projets',
-        hero__subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam <br class="blog--xxl__separator"> en Côte d’ivoire et dans la sous région',  
+        hero__subtitle: '...',  
 }
     const rawData = fs.readFileSync('blog__posts.json');
     const data = JSON.parse(rawData);
@@ -50,7 +51,7 @@ router.get('/agenda', (req, res)=>{
         banner__image: "Startup-Grind.jpeg",
         hero__label: 'Agenda',
         hero__title: 'Nos évènements du mois',
-        hero__subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br class="blog--xxl__separator"> Etiam eu turpis molestie, dictum es', 
+        hero__subtitle: '...', 
         page__script: 'events.js', 
     }
 
@@ -79,6 +80,7 @@ router.get('/faire-un-don', (req, res)=>{
         banner__image: "H-FabLab-Abidjan-Slide-2.jpg",
         hero__label: 'Faire un don',
         hero__title: 'Nous soutenir',
+        hero__subtitle: '...', 
        
     }
     res.render('pages/donate', {locals})
@@ -176,7 +178,7 @@ router.get('/liste-equipement', (req, res) => {
     const locals = {
       page__title: "Inscription atelier",
       banner__image: "Rectangle 5982.png",
-      hero__title: 'Réserver une machine',
+      hero__title: 'Inscription atelier',
       hero__subtitle: 'Nous organisons différentes formations numériques gratuites <br class="blog--xxl__separator"> eu turpis molestie, dictum es'
     };
     res.render('pages/inscription-atelier', {locals});
@@ -187,7 +189,7 @@ router.get('/liste-equipement', (req, res) => {
     const locals = {
       page__title: "Inscription evenement",
       banner__image: "Rectangle 5982.png",
-      hero__title: 'Réserver une machine',
+      hero__title: 'Inscription evenement',
       hero__subtitle: 'Nous organisons différentes formations numériques gratuites <br class="blog--xxl__separator"> eu turpis molestie, dictum es'
     };
     res.render('pages/inscription-evenement', {locals});
@@ -241,15 +243,16 @@ function renderBlog_post(req, res) {
         base__attr: "../",
         hero__label: 'Blog',
         hero__title: 'Nos actualités', 
+        page__script: 'blog_post.js'
     }
 
     const rawData = fs.readFileSync('relative_posts.json')
     const data = JSON.parse(rawData)
 
-    res.render('blog_posts/' + req.params.id, {locals , relative_posts: data.blog_posts});
+    res.render('blog_posts/' + req.query.id, {locals , relative_posts: data.blog_posts});
   }
 
-router.get('/blog/:id', (req, res) => {
+router.get('/blog/post', (req, res) => {
     renderBlog_post(req, res);
 });
 
