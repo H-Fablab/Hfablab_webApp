@@ -1,0 +1,85 @@
+<section class="dashb--hero section--margin mt-2">
+        {{>header}}
+    <img src="images/project.webp" alt="" srcset="">
+    <div class="overlay"></div>
+    <span class="user--profile">
+        <img src="images/Rectangle 23.png" alt="" srcset="">
+    </span>
+</section>
+
+
+<section class="section--wrapper user--account set--account">
+    <div class="main--container">
+        <div class="user--info">
+            <div class="user--name__group">
+                <h4>Marc Doe</h4>
+                <span>marcdoe@gmail.com</span>
+            </div>
+
+            <div class="info--table">
+                <div class="info--row">
+                    <span class="info--title">Pays:</span>
+                    <span class="info">Sénégal</span>
+                </div>
+                <div class="info--row">
+                    <span class="info--title">Adresse:</span>
+                    <span class="info">Angré 7eme tranche, Abidjan,Côte d’ivoire</span>
+                </div>
+                <div class="info--row">
+                    <span class="info--title">Téléphone:</span>
+                    <span class="info">+221 7865443333l</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="user--main__content">
+            <nav>
+                <a class="tab--nav__link" href="http://">Mon compte</a>
+                <a class="tab--nav__link active" href="http://">Tableau de bord</a>
+            </nav>
+
+            <div class="account--data">
+
+                 <h2>Mes informations</h2><form action="">
+                <form action="" method="post"> 
+                   
+
+                    <div class="input--wrapper ">
+                        <label for="">Pays </label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="input--wrapper">
+                            <label for="">Adresse </label>
+                            <input type="text" name="" id="">
+                    </div>
+
+                    <div class="input--wrapper">
+                            <label for="">Téléphone </label>
+                            <input type="text" name="" id="">
+                    </div>
+                     <div class="input--wrapper ">
+                        <label for="">Email</label>
+                        <input type="text" name="" id="">
+                    </div>
+
+                    <div class="form--separator">
+                        <span>Modifier mon mot de pass</span>
+                    </div>
+
+                     <div class="input--wrapper">
+                            <label for="">Mot de pass actuel </label>
+                            <input type="text" name="" id="">
+                    </div>
+                    <div class="input--wrapper">
+                            <label for="">Nouveau mot de pass </label>
+                            <input type="text" name="" id="">
+                    </div>
+
+                <input class="btn btn--primary" type="submit" value="Enregistrer">
+            </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/main__footer') %>

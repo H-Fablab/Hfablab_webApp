@@ -1,7 +1,6 @@
-
-const express = require("express")
-const path = require('path')
+import express from 'express'
 const router = express.Router()
+
 
 router.get('/dashboard', (req, res)=>{
     res.render('pages/dashboard')
@@ -19,4 +18,4 @@ router.get('/parametres', (req, res)=>{
 
 })
 
-module.exports = router
+export default router

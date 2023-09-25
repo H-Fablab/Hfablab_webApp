@@ -1,0 +1,54 @@
+<section class="section--wrapper latest--blog">
+    <div class="container">
+         <div class="container--title__group">
+           <div class="title--content">
+                 <span class="pastille--label pastille--label__black">Blog</span>
+                 <h2>Nos dernières actualités</h2>
+           </div>
+            <a class="btn btn--outlined__icon btn--icon" href="/blog">Voir plus <span class="icon"> <svg width="20" height="18" viewBox="0 0 20 18" fill="current" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.172 8.00014L10.101 1.92914L11.515 0.515137L20 9.00014L19.293 9.70714L11.515 17.4851L10.101 16.0711L16.172 10.0001L0 10.0001L0 8.00014L16.172 8.00014Z" fill="current"/>
+                </svg></span>
+           </a>
+        </div>
+
+         <div id="formList">
+            <div id="list">
+           <% blog_data.forEach(function(blog_post) { %>
+           <div class="item post--item">
+                <div class="img--box ">
+                    <img src="images/<%= blog_post.image %>" alt="" srcset="">
+                    <div class="date--card__wrapper">
+                       <div class="date--card">
+                             <span class="day"><%= blog_post.explode_date.jour %></span>
+                        <span class="month "><%= blog_post.explode_date.mois %></span>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="post--body">
+                    <div class="cat--labels">
+                        <% for (let cat__label of blog_post.cat__labels) { %>
+                         <span class="category--label"><%= cat__label %>></span>
+                         <% } %>
+                    </div>
+
+                   <a href="/blog/post?title=<%= blog_post.link_title %>&id=<%= blog_post._id %>">
+                                        <h4 class="post--title">
+                                            <%= blog_post.truncate_title %>
+                                        </h4>
+                                    </a>
+
+                    <a class="underlined--btn" href="/blog/post?title=<%= blog_post.link_title %>&id=<%= blog_post._id %>">Lire l'article</a>
+                </div>
+             </div>
+             <% }); %>
+            </div>
+        </div>
+
+    
+    <div class="direction">
+        <button id="prev"> < </button>
+        <button id="next"> > </button>
+    </div>
+    </div>
+</section>

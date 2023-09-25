@@ -1,0 +1,68 @@
+<%- include('../partials/main__nav') %>
+<section class="inner--hero inner--hero__bloc section--margin mt-7">
+         <div class="hero--banner">
+                <img src="images/<%= locals.banner__image  %>" alt="" srcset="">
+                 <div class="header--text__container">
+                       <span class="pastille--label pastille--label__black"><%= locals.hero__label %></span>
+                       <h1><%= locals.hero__title  %></h1>
+                       <p><%= locals.hero__subtitle %></p>
+                    </div>
+                 <div class="dark--separator"></div>
+        </div>  
+</section>
+<div class="connexion--form main--wrapper section--margin mb-5">
+
+
+            <div class="col--unit__6 login__form">
+                <div class="form--content">
+                    <div class="title--group">
+                        <h3>Se connecter</h3>
+                    </div>
+                    <form action="">
+                            <div class="input--wrapper">
+                                    <label for="">Email</label>
+                                    <input type="text" name="" id="">
+                                </div>
+                            <div class="input--wrapper">
+                                    <label for="">Mot de pass</label>
+                                    <input type="password" name="" id="">
+                            </div>
+                            <input class="btn btn--primary" type="submit" value="Se connecter">
+                    </form>
+                </div>
+            </div>
+
+
+                 <div class="col--unit__6 signup__form">
+                     <div class="form--content">
+                            <div class="title--group">
+                                <h3>S'inscrire</h3>
+                            </div>
+                            <form action="">
+                                <div class="input--wrapper">
+                                        <label for="">Nom et prénom </label>
+                                        <input type="text" name="" id="">
+                                    </div>
+                                    
+                                <div class="input--wrapper col--unit__6">
+                                        <label for="">Email</label>
+                                        <input type="text" name="" id="">
+                                    </div>
+                                <div class="input--wrapper">
+                                        <label for="">Mot de pass</label>
+                                        <input type="password" name="" id="">
+                                </div>
+
+                                <div class="input--wrapper ">
+                                        <label for="">Confirmez le mot de pass</label>
+                                        <input type="password" name="" id="">
+                                </div>
+
+
+                                <input class="btn btn--primary" type="submit" value="S'inscrire">
+                            </form>
+                    </div>
+                </div>
+</div>
+
+<%- include('../partials/main__footer') %>

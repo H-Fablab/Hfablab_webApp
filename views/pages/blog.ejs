@@ -1,0 +1,52 @@
+<%- include('../partials/main__nav') %>
+<section class="inner--hero inner--hero__bloc section--margin mt-7">
+         <div class="hero--banner">
+                <img src="images/<%= locals.banner__image  %>" alt="" srcset="">
+                 <div class="header--text__container">
+                       <span class="pastille--label pastille--label__black"><%= locals.hero__label %></span>
+                       <h1><%= locals.hero__title  %></h1>
+                       <p><%= locals.hero__subtitle %></p>
+                    </div>
+                 <div class="dark--separator"></div>
+        </div>  
+</section>
+<section class="section--wrapper blog--page">
+    <div class="container">
+       
+        <div class="blog--posts__wrapper flex--container">
+          
+        <% blog_data.forEach(function(blog_post) { %>
+           <div class="col--unit__4 post--item">
+            <div class="img--box ">
+                <img src="images/<%= blog_post.image %>" alt="" srcset="">
+                <div class="date--card__wrapper">
+                   <div class="date--card">
+                         <span class="day"><%= blog_post.explode_date.jour %></span>
+                    <span class="month "><%= blog_post.explode_date.mois %></span>
+                   </div>
+                </div>
+            </div>
+
+            <div class="post--body">
+                <div class="cat--labels">
+                    <% for (let cat__label of blog_post.cat__labels) { %>
+                     <span class="category--label"><%= cat__label %></span>
+                     <% } %>
+                </div>
+
+               <a href="/blog/post?title=<%= blog_post.link_title %>&id=<%= blog_post._id %>">
+                                    <h4 class="post--title">
+                                        <%= blog_post.truncate_title %>
+                                    </h4>
+                                </a>
+
+                <a class="underlined--btn" href="/blog/post?title=<%= blog_post.link_title %>&id=<%= blog_post._id %>">Lire l'article</a>
+               </div>
+             </div>
+             <% }); %>
+        </div>
+    </div>
+
+</section>
+
+<%- include('../partials/main__footer') %>

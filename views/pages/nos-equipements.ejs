@@ -1,0 +1,44 @@
+<%- include('../partials/main__nav') %>
+<section class="inner--hero inner--hero__bloc section--margin mt-7">
+         <div class="hero--banner">
+                <img src="images/<%= locals.banner__image  %>" alt="" srcset="">
+                 <div class="header--text__container">
+                        <h1><%= locals.hero__title  %></h1>
+                        <p><%= locals.hero__subtitle %></p>
+                    </div>
+                 <div class="dark--separator"></div>
+        </div>  
+</section>
+<section class="section--wrapper  equipment mb-5">
+  <div class="container equipments--container">
+    
+           <div class="nav--tabs">
+                  <div class="scroll--controllers__wrap">
+                      <span id="slideLeft"><i class="arrow left"></i></span>
+                      <span id="slideRight"><i class="arrow right"></i></span>
+                  </div>
+                  <div class="nav--tabs--container">
+                    <% if (Array.isArray(equipments)) { %>
+                        <% let isFirst = true %>
+                        <% equipments.forEach(function(equipment){ %>
+                             <a class="nav--tabs__links <%= isFirst ? 'active' : '' %>"><%= equipment.title %></a>
+                        <% isFirst = false; %>
+                        <% }) %>
+                         <% } else { %>
+                            <li>No equipment data available.</li>
+                        
+                        <% } %>
+                  </div>
+              </div>
+          <div class="equipment__description--wrapper">
+              <% let firstListed = true; %>
+                  <% equipments.forEach(function(equipment){ %>
+                          <%- include(`../equipements/${equipment.file__name}`) %> 
+                  <% let firstListed = false; %>  
+              <% }) %>
+          </div>
+     
+  </div>
+</section>
+   
+<%- include('../partials/main__footer') %>

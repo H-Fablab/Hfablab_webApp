@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-     {{#if locals.base__attr}}
-        <base href="{{{locals.base__attr}}}">
-     {{/if}}
-     <meta property="og:url"           content="www.dev.h-fablab.org/" />
-      <meta property="og:type"          content="website" />
-      <meta property="og:title"         content="H-Fablab" />
-      {{!-- <meta property="og:description"   content="Your description" /> --}}
-      <meta property="og:image"         content="www.dev.h-fablab.org/images/logo.png" />
-    <meta charset="UTF-8">
-     <link rel="icon" type="image/x-icon" href="images/hfablab_logo_dark.ico">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/main.css">
-    
-    <title>{{{locals.page__title}}}</title>
-</head>
-<body>
+
     {{{body}}}
 
- <script type="module" src="js/main.js"></script>
- {{#if locals.page__script}}
-       <script type="module" src="js/{{{locals.page__script}}}"></script>
-{{/if}}
-</body>
-</html>
+
+  

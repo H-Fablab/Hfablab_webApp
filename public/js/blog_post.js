@@ -1,14 +1,15 @@
 
-// Function to handle sharing and copying based on the clicked element
+
+  
 function shareOrCopy(action) {
+
+    const ogImage = document.querySelector('meta[property="og:image"]').content
+    const ogTitle = document.querySelector('meta[property="og:title"]').content
     const postURL = window.location.href; // Automatically grab the current page's URL
-    console.log(postURL)
     switch (action) {
-        case 'facebook':
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${postURL}`, '_blank');
-            break;
+        
         case 'linkedin':
-            window.open(`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(postURL)}`, '_blank');
+            window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(postURL)}&title=${encodeURIComponent(ogTitle)}&imgsrc=${encodeURIComponent(ogImage)}`, '_blank');
             break;
         case 'twitter':
             window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(postURL)}`, '_blank');
