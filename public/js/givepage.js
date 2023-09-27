@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 public_key: 'pk_live_nMZMOq1pgMXaTIEyijtAVl4d',
                 transaction: {
                   amount: customAmount,
-                  description: 'Acheter mon produit'
+                  description: 'Faire un don'
                 },
                 customer: {
-                  email: 'johndoe@gmail.com',
+                  email: 'john@doe.com',
                   lastname: 'Doe',
                 },
                 container: '#embed' })

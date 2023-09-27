@@ -2,10 +2,8 @@ import express from 'express'
 const router = express.Router()
 
 
-router.get('/dashboard', (req, res)=>{
-    res.render('pages/dashboard')
-
-})
+router.route('/dashboard/user/:id')
+.get()
 
 
 router.get('/mon-abonnement', (req, res)=>{
