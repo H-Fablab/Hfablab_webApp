@@ -33,40 +33,40 @@
     <div class="container flex--container">
         <div class="col--unit__6 form--wrapper">
             <h2 >Nous laisser un message</h2> 
-            <form  action="">
+            <form  action="/contact" method="POST" id="contactForm">
                 <div class="flex--container">
                     <div class="input--wrapper col--unit__6">
                         <label for="">Nom </label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="name" id="lastname">
                     </div>
 
                     <div class="input--wrapper col--unit__6">
                         <label for="">Prénom</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="name" id="firstname">
                     </div>
                 </div>
                 <div class="input--wrapper">
                         <label for="">Email </label>
-                        <input type="email" name="" id="">
+                        <input type="email" name="email" id="email">
                 </div>
 
                   <div class="input--wrapper">
                         <label for="">Téléphone </label>
-                        <input type="tel" name="" id="">
+                        <input type="tel" name="phoneNumber" id="phoneNumber">
                 </div>
                 <div class="input--wrapper">
                         <label for="">Sujet </label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="subject" id="subject">
                 </div>
 
                  
 
                 <div class="input--wrapper ">
                         <label for="">Votre message </label>
-                        <textarea name="" id="" cols="30" rows="6"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="6"></textarea>
                 </div>
-
-                <input class="btn btn--primary" type="submit" value="Envoyer">
+                
+                <button class="btn btn--primary"type="submit">Envoyer</button>
             </form>
         </div>
         <div class="col--unit__6 map__wrapper bg--clay">
@@ -74,6 +74,5 @@
         </div>
     </div>
 </section>
-
 
 <%- include('../partials/main__footer') %>

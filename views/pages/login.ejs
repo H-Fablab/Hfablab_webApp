@@ -18,14 +18,14 @@
                     <div class="title--group">
                         <h3>Se connecter</h3>
                     </div>
-                    <form action="">
+                    <form action="/login" method="post" id="loginForm">
                             <div class="input--wrapper">
                                     <label for="">Email</label>
-                                    <input type="text" name="" id="">
+                                    <input type="email" name="" id="">
                                 </div>
                             <div class="input--wrapper">
                                     <label for="">Mot de pass</label>
-                                    <input type="password" name="" id="">
+                                    <input type="password" name="" id="password">
                             </div>
                             <input class="btn btn--primary" type="submit" value="Se connecter">
                     </form>
@@ -38,24 +38,24 @@
                             <div class="title--group">
                                 <h3>S'inscrire</h3>
                             </div>
-                            <form action="">
+                            <form action="signup" method="post" id="signupForm">
                                 <div class="input--wrapper">
                                         <label for="">Nom et prénom </label>
-                                        <input type="text" name="" id="">
+                                        <input type="text" name="fullName" id="fullName">
                                     </div>
                                     
                                 <div class="input--wrapper col--unit__6">
                                         <label for="">Email</label>
-                                        <input type="text" name="" id="">
+                                        <input type="email" name="" id="email">
                                     </div>
                                 <div class="input--wrapper">
                                         <label for="">Mot de pass</label>
-                                        <input type="password" name="" id="">
+                                        <input type="password" name="password" id="password">
                                 </div>
 
                                 <div class="input--wrapper ">
                                         <label for="">Confirmez le mot de pass</label>
-                                        <input type="password" name="" id="">
+                                        <input type="password" name="passwordConfirmation" id="passwordConfirmation">
                                 </div>
 
 

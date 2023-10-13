@@ -14,36 +14,41 @@
           <div class="container flex--container">
        
         <div class="col--unit__6  centered--box form--wrapper">
-            <form action="#">
+            <form action="/inscription-atelier" method="POST" id="workshopForm">
                 <div class="input--wrapper">
                         <label for="">Nom complet </label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="fullName" id="fullName">
                     </div>
                     
                 <div class="flex--container">
                      <div class="input--wrapper col--unit__6">
                         <label for="">Email</label>
-                        <input type="text" name="" id="">
+                        <input type="email" name="email" id="email">
                     </div>
 
                     <div class="input--wrapper col--unit__6">
                         <label for="">Téléphone </label>
-                        <input type="text" name="" id="">
+                        <input type="tel" name="phoneNumber" id="phoneNumber">
                     </div>
                 </div>
 
                  <div class="input--wrapper">
                         <label for="">Sélectionnez l'atelier</label>
-                         <div class="select">
-                            <select>
-                            <option value="1">Modelisation et impression 3D</option>
-                            <option value="2">Broderie numérique</option>
-                            <option value="3">Robotique</option>
-                            </select>
+                         <div class="select workshop--list">
+                                <select id="workshopTitle">
+                                    <option value="">Sélectionnez un équipement</option>
+                                    <% if (Array.isArray(workshops)) { %>
+                                        <% workshops.forEach(function(workshop){ %>
+                                            <option value="<%= workshop.title %>"><%= workshop.title %></option>
+                                        <% }) %>
+                                         <% } else { %>
+                                            <option value="">Aucun atelier disponible</option>
+                                        <% } %>
+                                </select>
                         </div>
                 </div>
 
-                <input class="btn btn--primary" type="submit" value="Submit">
+                <button class="btn btn--primary" type="submit">S'inscrire</button>
             </form>
         </div>
     </div>

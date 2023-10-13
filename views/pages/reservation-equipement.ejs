@@ -14,36 +14,57 @@
           <div class="container flex--container">
        
         <div class="col--unit__6  centered--box form--wrapper">
-            <form action="">
+            <form action="/reservation-equipemenent" method="POST" id="equipmentBooking">
                 <div class="input--wrapper">
                         <label for="">Nom complet </label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="fullName" id="fullName">
                     </div>
                     
                 <div class="flex--container">
                      <div class="input--wrapper col--unit__6">
                         <label for="">Email</label>
-                        <input type="text" name="" id="">
+                        <input type="email" id="email">
                     </div>
 
                     <div class="input--wrapper col--unit__6">
                         <label for="">Téléphone </label>
-                        <input type="text" name="" id="">
+                        <input type="tel" name="phoneNumber" id="phoneNumber">
                     </div>
-                </div>
+               </div>
+                <div class="input--wrapper">
+                    <label for="">Date de réservation</label>
+                    <input type="date" name="bookingDate" id="bookingDate">
+               </div>
+                <div class="flex--container">
+                    <div class="input--wrapper col--unit__6">
+                        <label for="">Heure de début</label>
+                        <input type="time" name="startHour" min="09:00" max="18:00" id="startHour" />
+                      </div>
+                      
+                      <div class="input--wrapper col--unit__6">
+                        <label for="">Heure de fin </label>
+                        <input type="time" name="finishHour" min="09:00" max="18:00" id="finishHour" />
+                      </div>
+               </div>
 
                  <div class="input--wrapper">
                         <label for="">Choix des équipements</label>
-                         <div class="select">
-                            <select>
-                           <option value="1">Imprimante 3D</option>
-                            <option value="2">Découpe laser</option>
-                            <option value="3">Découpe vinyle</option>
+                         <div class="select equipment--box">
+                            <select id="equipment">
+                                <option value="">Sélectionnez un équipement</option>
+                                <% if (Array.isArray(equipments)) { %>
+                                    <% equipments.forEach(function(equipment){ %>
+                                        <option value="<%= equipment.title %>"><%= equipment.title %></option>
+                                    <% }) %>
+                                     <% } else { %>
+                                        <option value="">Aucun équipement disponible</option>
+                                    
+                                    <% } %>
+                               
                             </select>
                         </div>
-                </div>
-
-                <input class="btn btn--primary" type="submit" value="Réserver">
+                </div> 
+                <button class="btn btn--primary" type="submit">Réserver</button>
             </form>
         </div>
     </div>

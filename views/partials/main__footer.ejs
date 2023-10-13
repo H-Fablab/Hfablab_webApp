@@ -71,13 +71,15 @@
             <div class="col--unit__4 newsletters--box">
                 <h3 class="underlined--title">actualités</h3>
                 <p>Abonnez-vous à la newsletter</p>
-                <form action="" method="post">
+                <form action="/newsletter" method="post" id="newsletterForm">
                     <div class="mail--input__wrapper">
-                        <input  class="mail--input" type="text" placeholder="Mail">
-                        <button class="submit" type="submit">S'abonner</button>
+                        <div class="input--control">
+                            <input  class="mail--input" type="email" placeholder="Mail" id="newsletterEmail">
+                             <button class="submit" type="submit">S'abonner</button>
+                        </div>
                     </div>
                     <div class="consent--checkbox">
-                        <input class="checkbox" type="checkbox" name="" id=""><span>En cliquant sur “S’abonner”, vous accepter de reçevoir nos Emails périodique</span>
+                        <input class="checkbox " type="checkbox" name="" id="consent"><span class="consentTextBox">En cliquant sur “S’abonner”, vous accepter de reçevoir nos Emails périodique</span>
                     </div>
                 </form>
             </div>
@@ -105,11 +107,32 @@
         }(document, 'script', 'facebook-jssdk'));
     </script>
     <script type="module" src="js/blog_post.js"></script>
+    
 <% } else if (currentPage.includes('nos-evenements')) { %>
     <script type="module" src="js/events.js"></script>
+
 <% } else if (currentPage.includes('nos-equipements')) { %>
     <script type="module" src="js/equipments.js"></script>
-<% } else if (currentPage.includes('ateliers')) { %>
+
+    <% } else if (currentPage.includes('/reservation-equipement')) { %>
+        <script type="module" src="js/equipment-booking.js"></script>
+
+    <% } else if (currentPage.includes('contact')) { %>
+    <script type="module" src="js/contact-form.js"></script>
+
+    <% } else if (currentPage.includes('/inscription-evenement/')) { %>
+        <script type="module" src="js/event-registration.js"></script>
+
+        <% } else if (currentPage.includes('/inscription-atelier')) { %>
+            <script type="module" src="js/workshopResgistration.js"></script>
+
+    <% } else if (currentPage.includes('faire-un-don')) { %>
+        <script type="module" src="js/in-kind-donnation.js"></script>
+
+        <% } else if (currentPage.includes('/soumettre-un-projet')) { %>
+            <script type="module" src="js/project-submission.js"></script>
+
+    <% } else if (currentPage.includes('ateliers')) { %>
     <script type="module" src="js/atelier.js"></script>
     <% } else if (currentPage.includes('faire-un-don')) { %>
  <script type="module" src="js/givepage.js"></script>
@@ -119,6 +142,7 @@
 <% } %>
 
  <script type="module" src="js/main.js"></script>
+ <script type="module" src="js/newsletter.js"></script>
 
 </body>
 </html>

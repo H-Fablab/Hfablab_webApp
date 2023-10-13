@@ -1,6 +1,5 @@
-import dotenv from 'dotenv';
-dotenv.config()
-
+import dotenv from 'dotenv/config';
+import cors from "cors"
 import express from 'express'
 import bodyParser from 'body-parser'
 import path from 'path'
@@ -20,10 +19,13 @@ const __dirname = path.dirname(__filename)
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 
-
+app.use(cors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  }));
 // Import routes
 app.use(pagesRoutes);
-app.use("/", userRoutes);
+app.use(userRoutes);
 
 
 app.use(bodyParser.urlencoded({ extended: true })) // Parse URL-encoded bodies

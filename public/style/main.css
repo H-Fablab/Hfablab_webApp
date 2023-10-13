@@ -560,7 +560,7 @@ p {
 
 */
 
-nav{
+header nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1668,6 +1668,10 @@ justify-content: space-between;
   font-size: 15px;
 }
 
+.newsletters--box  .consent--checkbox.error--text span{
+  color: #ff0000;
+}
+
 .main--footer .company .address{
   font-weight: 500;
   margin-bottom: 2.5rem;
@@ -1995,7 +1999,24 @@ display: block;
   rotate: -90deg;
 }
 
+.event--form .event--title{
+  font-size: 22px;
+}
 
+.error-container {
+  margin-top: 2rem;
+  color: #fdfdfd;
+  background-color: #ff0000;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.error-container p{
+  margin: 0;
+}
 
 
 /*
@@ -2399,6 +2420,10 @@ form .input--wrapper label{
   color: var(--primary-8);
 }
 
+form small{
+  color: #ff0000;
+  display: block;
+}
 
 form select {
   /* Reset Select */
@@ -2547,10 +2572,148 @@ form .file-upload-wrapper input {
   width: 100%;
 }
 
+.submission--overlay {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 99999;
+  cursor: pointer;
+}
+
+.overlay-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  border-radius: 20px;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  background-color: var(--ful__white);
+  text-align: center;
+  padding: 2rem;
+}
+
+.overlay-box p{
+  margin-bottom: 0;
+}
+
+.overlay-box .icon--box{
+  background-color: var(--secondary);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 1rem auto;
+  display: grid;
+  place-content: center;
+  padding: 1.8rem;
+}
+
+.overlay-box .icon--box svg{
+  color: var(--ful__white);
+}
+
+.form-loader {
+  width: 25px;
+  height: 25px;
+  border: 3px dotted #FFF;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+  margin-left: 20px;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+       
+  #customDatePicker {
+    width: 300px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+  }
+  
+  .datepicker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .datepicker-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .datepicker-body table {
+    width: 100%;
+  }
+  
+  .datepicker-body table th,
+  .datepicker-body table td {
+    text-align: center;
+    padding: 5px;
+  }
+  
+  .selected {
+    background-color: #0088cc;
+    color: #fff;
+  }
+  .noscroll { 
+    overflow: hidden;
+  }  
 
 
+  form .input--wrapper.file--input input {
+    height: auto;
+    border: 1px solid var(--clay__53);
+    padding: 15px 30px;
+    color: var(--black);
+    width: 100%;
+    background-color: transparent;
+}
 
+/* file upload button */
+input[type="file"]::file-selector-button {
+  border-radius: 4px;
+  padding: 0 16px;
+  height: 40px;
+  cursor: pointer;
+  background-color: rgba(253, 210, 191, 0.808);
+  border: 1px solid rgba(230, 228, 228, 0.16);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+  margin-right: 16px;
+  transition: background-color 200ms;
+}
+
+/* file upload button hover state */
+input[type="file"]::file-selector-button:hover {
+  background-color: #f3f4f6;
+}
+
+/* file upload button active state */
+input[type="file"]::file-selector-button:active {
+  background-color: #e5e7eb;
+}
 /*
+
+
+
 
 
 ::::::::::::::::::Expertise::::::::::::::after
@@ -3428,7 +3591,7 @@ padding: 4rem 2rem 2rem;
   flex: 0 1 calc(50% - 1rem);
 }
 .donnation--form > .flex--container{
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .donnation--form > .flex--container  .form--wrapper .title--group{
@@ -4380,6 +4543,10 @@ h2 {
 }
 .main--equipments .button--group {
   gap: 1rem;
+}
+
+.col--unit__6.form--wrapper {
+  flex: 0 1 100%;
 }
 
 .blog--post .post--content .post--infos {

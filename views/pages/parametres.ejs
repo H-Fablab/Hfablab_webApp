@@ -1,5 +1,6 @@
+<%- include('../partials/head') %>
 <section class="dashb--hero section--margin mt-2">
-        {{>header}}
+    <%- include('../partials/header') %>
     <img src="images/project.webp" alt="" srcset="">
     <div class="overlay"></div>
     <span class="user--profile">
@@ -41,25 +42,24 @@
             <div class="account--data">
 
                  <h2>Mes informations</h2><form action="">
-                <form action="" method="post"> 
+                <form action="/parametres" method="post" id="accountInfosForm"> 
                    
-
                     <div class="input--wrapper ">
                         <label for="">Pays </label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="country" value="Togo">
                     </div>
                     <div class="input--wrapper">
                             <label for="">Adresse </label>
-                            <input type="text" name="" id="">
+                            <input type="text" name="address" id="address">
                     </div>
 
                     <div class="input--wrapper">
                             <label for="">Téléphone </label>
-                            <input type="text" name="" id="">
+                            <input type="text" name="phoneNumber" id="phoneNumber" value="">
                     </div>
                      <div class="input--wrapper ">
                         <label for="">Email</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="email" id="email" value="">
                     </div>
 
                     <div class="form--separator">
@@ -68,11 +68,11 @@
 
                      <div class="input--wrapper">
                             <label for="">Mot de pass actuel </label>
-                            <input type="text" name="" id="">
+                            <input type="text" name="" id="password">
                     </div>
                     <div class="input--wrapper">
                             <label for="">Nouveau mot de pass </label>
-                            <input type="text" name="" id="">
+                            <input type="text" name="" id="newpassword">
                     </div>
 
                 <input class="btn btn--primary" type="submit" value="Enregistrer">

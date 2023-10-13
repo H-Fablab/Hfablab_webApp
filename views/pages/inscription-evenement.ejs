@@ -10,34 +10,54 @@
         </div>  
 </section>
 
-
-    <section class="section--wrapper mt-5 mb-5 form--section">
-          <div class="container flex--container">
-       
-        <div class="col--unit__6  centered--box form--wrapper">
-            <form action="">
-                <div class="input--wrapper">
-                        <label for="">Nom complet </label>
-                        <input type="text" name="" id="">
+<section class="section--wrapper mt-5 mb-5 form--section event--form">
+        <div class="container flex--container">
+    
+    <div class="col--unit__6  centered--box form--wrapper">
+        <div class="event--item event-content mb-5">
+            <div class="preview--wrapper">
+                <div class="thumbail--group">
+                    <div class="image__group">
+                        <img src="images/events/<%= eventData.coverImagePath %>" alt="" srcset="">
+                        <div class="content--box">
+                            <span class="mic--icon">
+                                <svg width="19" height="29" viewBox="0 0 19 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.0625 5.4375C4.0625 3.99539 4.63538 2.61234 5.65511 1.59261C6.67484 0.572878 8.05789 0 9.5 0C10.9421 0 12.3252 0.572878 13.3449 1.59261C14.3646 2.61234 14.9375 3.99539 14.9375 5.4375V14.5C14.9375 15.9421 14.3646 17.3252 13.3449 18.3449C12.3252 19.3646 10.9421 19.9375 9.5 19.9375C8.05789 19.9375 6.67484 19.3646 5.65511 18.3449C4.63538 17.3252 4.0625 15.9421 4.0625 14.5V5.4375Z" fill="#F99C1C"/>
+                                <path d="M1.34375 11.7812C1.5841 11.7812 1.81461 11.8767 1.98457 12.0467C2.15452 12.2166 2.25 12.4471 2.25 12.6875V14.5C2.25 16.4228 3.01384 18.2669 4.37348 19.6265C5.73311 20.9862 7.57718 21.75 9.5 21.75C11.4228 21.75 13.2669 20.9862 14.6265 19.6265C15.9862 18.2669 16.75 16.4228 16.75 14.5V12.6875C16.75 12.4471 16.8455 12.2166 17.0154 12.0467C17.1854 11.8767 17.4159 11.7812 17.6562 11.7812C17.8966 11.7812 18.1271 11.8767 18.2971 12.0467C18.467 12.2166 18.5625 12.4471 18.5625 12.6875V14.5C18.5625 16.7466 17.7281 18.9132 16.221 20.5794C14.7139 22.2455 12.6416 23.2925 10.4062 23.5172V27.1875H15.8438C16.0841 27.1875 16.3146 27.283 16.4846 27.4529C16.6545 27.6229 16.75 27.8534 16.75 28.0938C16.75 28.3341 16.6545 28.5646 16.4846 28.7346C16.3146 28.9045 16.0841 29 15.8438 29H3.15625C2.9159 29 2.68539 28.9045 2.51543 28.7346C2.34548 28.5646 2.25 28.3341 2.25 28.0938C2.25 27.8534 2.34548 27.6229 2.51543 27.4529C2.68539 27.283 2.9159 27.1875 3.15625 27.1875H8.59375V23.5172C6.35837 23.2925 4.28612 22.2455 2.77903 20.5794C1.27195 18.9132 0.437472 16.7466 0.4375 14.5V12.6875C0.4375 12.4471 0.53298 12.2166 0.702935 12.0467C0.872889 11.8767 1.1034 11.7812 1.34375 11.7812Z" fill="#F99C1C"/>
+                                </svg>
+                            </span>
+                            <h3 class="event--title"><%= eventData.title %></h3>
+                        
+                        </div>
                     </div>
-                    
-                <div class="flex--container">
-                     <div class="input--wrapper col--unit__6">
-                        <label for="">Email</label>
-                        <input type="text" name="" id="">
-                    </div>
-
+                
+                </div>
+            </div>
+            
+            </div>
+        <form action="" id="formEvent" method="POST">
+            <div class="input--wrapper">
+                    <label for="">Nom complet </label>
+                    <input type="text" name="name" id="fullName" >
+                </div>
+                
+            <div class="flex--container">
                     <div class="input--wrapper col--unit__6">
-                        <label for="">Téléphone </label>
-                        <input type="text" name="" id="">
-                    </div>
+                    <label for="">Email</label>
+                    <input type="email" name="email" id="email" >
                 </div>
 
-                
-                <input class="btn btn--primary" type="submit" value="Submit">
-            </form>
-        </div>
+                <div class="input--wrapper col--unit__6">
+                    <label for="">Téléphone </label>
+                    <input type="tel" name="phoneNumber" id="phoneNumber">
+                </div>
+            </div>
+
+            
+            <button class="btn btn--primary" type="submit">S'inscrire</button>
+        </form>
     </div>
-    </section>
+</div>
+</section>
 
 <%- include('../partials/main__footer') %>

@@ -1,0 +1,101 @@
+<%- include('../partials/head') %>
+<section class="dashb--hero section--margin mt-2">
+    <%- include('../partials/header') %>
+    <img src="images/project.webp" alt="" srcset="">
+    <div class="overlay"></div>
+    <span class="user--profile">
+        <img src="images/Rectangle 23.png" alt="" srcset="">
+    </span>
+</section>
+
+<section class="section--wrapper user--account set--account">
+    <div class="main--container">
+        <div class="user--info">
+            <div class="user--name__group">
+                <h4>Marc Doe</h4>
+                <span>marcdoe@gmail.com</span>
+            </div>
+
+            <div class="info--table">
+                <div class="info--row">
+                    <span class="info--title">Pays:</span>
+                    <span class="info">Sénégal</span>
+                </div>
+                <div class="info--row">
+                    <span class="info--title">Adresse:</span>
+                    <span class="info">Angré 7eme tranche, Abidjan,Côte d’ivoire</span>
+                </div>
+                <div class="info--row">
+                    <span class="info--title">Téléphone:</span>
+                    <span class="info">+221 7865443333l</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="user--main__content">
+            <nav>
+                <a class="tab--nav__link" href="/dashboard">Mon compte</a>
+                <a class="tab--nav__link active" href="/mon-abonnement">Parametres</a>
+            </nav>
+
+            <div class="account--data">
+
+                 <h2>Finalisez votre abonnement</h2>
+                <form action="/abonnement" method="post" id="subscriptionForm"> 
+                    <div class="input--wrapper ">
+                        <label for="">Date de naissance</label>
+                        <input type="date" name="birthDate" id="birthDate">
+                    </div>
+
+                    <div class="input--wrapper ">
+                        <label for="">Pays </label>
+                        <input type="text" name="country" id="country">
+                    </div>
+                    <div class="input--wrapper">
+                            <label for="">Adresse </label>
+                            <input type="text" name="adresse" id="adresse">
+                    </div>
+
+                    <div class="input--wrapper">
+                            <label for="">Téléphone </label>
+                            <input type="tel" name="phoneNumber" id="phoneNumber">
+                    </div>
+
+                    <div class="payment--card">
+                        <div class="icon--group">
+                            <span class="subscription--icon">
+                                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.3338 14C24.0138 14 27.0005 11.0133 27.0005 7.33329C27.0005 3.65329 24.0138 0.666626 20.3338 0.666626C16.6538 0.666626 13.6672 3.65329 13.6672 7.33329C13.6672 11.0133 16.6538 14 20.3338 14ZM27.6005 21.4666C27.0805 20.9333 26.4272 20.6666 25.6672 20.6666H16.3338L13.5605 19.6933L14.0005 18.44L16.3338 19.3333H20.0672C20.5338 19.3333 20.9072 19.1466 21.2138 18.84C21.5205 18.5333 21.6672 18.16 21.6672 17.7466C21.6672 17.0266 21.3205 16.5333 20.6272 16.2533L10.9338 12.6666H8.33383V24.6666L17.6672 27.3333L28.3738 23.3333C28.3872 22.6266 28.1205 22 27.6005 21.4666ZM5.66717 12.6666H0.3125V27.3333H5.66717V12.6666Z" fill="white"/>
+                                </svg>
+                            </span>
+                             <span class="subscription--title">Coût de l'abonnement</span>
+                       </div>
+
+                       <div class="subscription--cost">
+                           <span>50000 FCFA</span>
+                       </div>
+                    </div>
+
+                     <div class="input--wrapper">
+                            <label for="">Numero de carte </label>
+                            <input type="number" name="" id="">
+                    </div>
+                   
+                   <div class="flex--container">
+                         <div class="input--wrapper col--unit__6">
+                            <label for="">Expiration </label>
+                            <input type="datetime" name="" id="expirationDate">
+                         </div>
+                        <div class="input--wrapper col--unit__6">
+                                <label for="">CVV </label>
+                                <input type="number" name="" id="cvv">
+                        </div>
+                   </div>
+                <input class="btn btn--primary" type="submit" value="Valider">
+            </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/main__footer') %>

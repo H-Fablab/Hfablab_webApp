@@ -107,7 +107,8 @@
                         data-customer-email="johndoe@gmail.com"
                         data-customer-lastname="Doe" >500.000 FCFA </div>
                       </div>
-                        <form action="" class="donation_form">
+                      
+                        <form action="" class="donation_form" id="donnationForm">
                             <div class="input--wrapper col--unit__6">
                                     <label for="">Autre montant </label>
                                     <input type="number" name="custom-amount" id="custom-amount">
@@ -125,42 +126,40 @@
              <div class="title--group">
                         <h3>Don en nature</h3>
                     </div>
-                <form>
+                <form class="donnation--form" id="form-donnation-2" method="post" action="/form-donnation-2">
                     <div class="input--wrapper">
                             <label for="">Nom complet </label>
-                            <input type="text" name="" id="">
+                            <input type="text" name="" id="fullName">
                         </div>
                         
                     <div class="flex--container">
                         <div class="input--wrapper col--unit__6">
                             <label for="">Email</label>
-                            <input type="text" name="" id="">
+                            <input type="email" name="" id="email">
                         </div>
 
                         <div class="input--wrapper col--unit__6">
                             <label for="">Téléphone </label>
-                            <input type="text" name="" id="">
+                            <input type="tel" name="" id="phoneNumber">
                         </div>
                     </div>
 
-                    <div class="flex--container">
-                        <div class="input--wrapper col--unit__6">
-                            <label for="">Ville</label>
-                            <input type="text" name="" id="">
-                        </div>
-
-                        <div class="input--wrapper col--unit__6">
-                            <label for="">Adresse</label>
-                            <input type="text" name="" id="">
-                        </div>
+                    <div class="input--wrapper">
+                        <label for="">Ville</label>
+                        <input type="text" name="" id="city">
                     </div>
 
-                    <div class="input--wrapper col--unit__6">
+                    <div class="input--wrapper">
+                        <label for="">Adresse</label>
+                        <input type="text" name="adress" id="address">
+                    </div>
+
+                    <div class="input--wrapper">
                             <label for="">Description de votre don</label>
-                            <textarea name="" id="" cols="30" rows="6"></textarea>
+                            <textarea name="message" id="message" cols="30" rows="6"></textarea>
                         </div>
 
-                    <input class="btn btn--primary"value="Valider">
+                        <button class="btn btn--primary" type="submit">Soummettre</button>
                 </form>
         </div>
     </div>
