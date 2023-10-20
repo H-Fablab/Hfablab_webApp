@@ -111,6 +111,12 @@
 <% } else if (currentPage.includes('nos-evenements')) { %>
     <script type="module" src="js/events.js"></script>
 
+<% } else if (currentPage.includes('login')) { %>
+    <script type="module" src="js/user.js"></script>
+
+<% }else if (currentPage.includes('mon-compte')) { %>
+    <script type="module" src="js/myaccount.js"></script>
+
 <% } else if (currentPage.includes('nos-equipements')) { %>
     <script type="module" src="js/equipments.js"></script>
 
@@ -136,8 +142,7 @@
     <script type="module" src="js/atelier.js"></script>
     <% } else if (currentPage.includes('faire-un-don')) { %>
  <script type="module" src="js/givepage.js"></script>
- <script type="text/javascript">
- FedaPay.init('.pay-btn', { public_key: 'pk_live_nMZMOq1pgMXaTIEyijtAVl4d' });</script>
+ <script type="text/javascript"> FedaPay.init('.pay-btn', { public_key: 'pk_live_nMZMOq1pgMXaTIEyijtAVl4d' });</script>
 
 <% } %>
 

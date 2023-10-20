@@ -8,29 +8,29 @@ class memberController {
     try {
 
 
-        const currentPage = `${req.protocol}://${req.get('host')}${req.originalUrl}`
-            
-                const apiRoot = process.env.API_ROOTE
+      const currentPage = `${req.protocol}://${req.get('host')}${req.originalUrl}`
 
-                // Fetch the page metadata from the API
-                   const userRaw = await fetch(`${apiRoot}/login`);
-                   // Check the response status
-                   if (!response.ok) {
-                     return res.status(response.status).send(response.statusText);
-                   }
-                   // Get the page metadata from the response
-                   const userData = await userRaw.json();
-               
-                   // Render the page with the page metadata
-                   console.log(userData)
-                   res.render(`pages/mon-compte}`, {currentPage})
- 
-    //   res.setHeader('Authorization', `Bearer ${token}`);
-    //   res.status(200).json({
-    //     status: 'Success',
-    //     user,
-    //     token
-    //   });
+      const apiRoot = process.env.API_ROOTE
+
+      // Fetch the page metadata from the API
+      const userRaw = await fetch(`${apiRoot}/login`);
+      // Check the response status
+      if (!response.ok) {
+        return res.status(response.status).send(response.statusText);
+      }
+      // Get the page metadata from the response
+      const userData = await userRaw.json();
+
+      // Render the page with the page metadata
+      console.log(userData)
+      res.render(`pages/mon-compte}`, { currentPage })
+
+      //   res.setHeader('Authorization', `Bearer ${token}`);
+      //   res.status(200).json({
+      //     status: 'Success',
+      //     user,
+      //     token
+      //   });
     } catch (error) {
       res.status(401).json({ message: error.message });
     }
@@ -39,11 +39,11 @@ class memberController {
   async logout(req, res) {
     try {
       req.user.tokens = req.user.tokens.filter((token) => {
-        return token.token !==req.token
+        return token.token !== req.token
       })
 
-      await req.user.save() 
-      
+      await req.user.save()
+
       res.status(200).json({
         status: 'Success'
       });
@@ -54,7 +54,7 @@ class memberController {
   }
 
   async dashboard(req, res) {
-    try { 
+    try {
       const user = req.user
       res.status(200).json({ user });
     } catch (error) {
@@ -62,7 +62,7 @@ class memberController {
     }
   }
   async parametres(req, res) {
-    try { 
+    try {
       const user = req.user
       res.status(200).json({ user });
     } catch (error) {
@@ -72,36 +72,22 @@ class memberController {
 
   async signUp(req, res) {
     try {
+      const { fullName, signupEmail } = req.body;
 
-      const apiRoot = process.env.API_ROOT;
-  
-      const response = await fetch(`${apiRoot}/sign-up`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      // Create a new user object.
+      const user = {
+        fullName,
+        signupEmail
+      };
 
-      });
-  
-      // Check the response status code
-      if (!response.ok) {
-        return res.status(response.status).send(response.statusText);
-      }
-  
-      // Get the response data
-      const responseData = await response.json();
-  
-      // Log the response data
-      console.log(responseData);
-  
-      // Return the response data to the user
-      res.status(200).json({ responseData });
+      res.status(201).json({ user });
+
     } catch (error) {
       const errorMessage = 'Failed to sign up: ' + error.message;
       res.status(500).json({ message: errorMessage });
     }
   }
-  
+
 }
 
 

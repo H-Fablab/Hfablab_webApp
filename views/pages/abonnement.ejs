@@ -14,34 +14,37 @@
             <div class="user--name__group">
                 <h4>Marc Doe</h4>
                 <span>marcdoe@gmail.com</span>
+                <div class="user--disconnect">
+                    <button>Se déconnecter</button>
+                </div>
             </div>
 
             <div class="info--table">
                 <div class="info--row">
                     <span class="info--title">Pays:</span>
-                    <span class="info">Sénégal</span>
+                    <span class="info">...</span>
                 </div>
                 <div class="info--row">
                     <span class="info--title">Adresse:</span>
-                    <span class="info">Angré 7eme tranche, Abidjan,Côte d’ivoire</span>
+                    <span class="info">...</span>
                 </div>
                 <div class="info--row">
                     <span class="info--title">Téléphone:</span>
-                    <span class="info">+221 7865443333l</span>
+                    <span class="info">...</span>
                 </div>
             </div>
         </div>
 
         <div class="user--main__content">
             <nav>
-                <a class="tab--nav__link" href="/dashboard">Mon compte</a>
-                <a class="tab--nav__link active" href="/mon-abonnement">Parametres</a>
+                <a class="tab--nav__link" href="/mon-compte/dashboard">Mon compte</a>
+                <a class="tab--nav__link active" href="/mon-compte/mon-abonnement">Parametres</a>
             </nav>
 
             <div class="account--data">
 
                  <h2>Finalisez votre abonnement</h2>
-                <form action="/abonnement" method="post" id="subscriptionForm"> 
+                <form action="/mon-compte/abonnement" method="post" id="subscriptionForm"> 
                     <div class="input--wrapper ">
                         <label for="">Date de naissance</label>
                         <input type="date" name="birthDate" id="birthDate">
@@ -53,7 +56,7 @@
                     </div>
                     <div class="input--wrapper">
                             <label for="">Adresse </label>
-                            <input type="text" name="adresse" id="adresse">
+                            <input type="text" name="adresse" id="address">
                     </div>
 
                     <div class="input--wrapper">
@@ -61,7 +64,7 @@
                             <input type="tel" name="phoneNumber" id="phoneNumber">
                     </div>
 
-                    <div class="payment--card">
+                    <!-- <div class="payment--card">
                         <div class="icon--group">
                             <span class="subscription--icon">
                                 <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,8 +93,8 @@
                                 <label for="">CVV </label>
                                 <input type="number" name="" id="cvv">
                         </div>
-                   </div>
-                <input class="btn btn--primary" type="submit" value="Valider">
+                   </div> -->
+                <input class="btn btn--primary" id="validatebtn" type="submit" value="Valider">
             </form>
             </div>
         </div>
