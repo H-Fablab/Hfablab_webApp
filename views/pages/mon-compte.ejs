@@ -12,11 +12,8 @@
     <div class="main--container">
         <div class="user--info">
             <div class="user--name__group">
-                <h4>...</h4>
-                <span>...</span>
-                <div class="user--disconnect">
-                    <button>Se déconnecter</button>
-                </div>
+                <h4><%= user.fullName %></h4>
+                <span><%= user.email %></span>
             </div>
 
             <div class="info--table">
@@ -33,6 +30,8 @@
                     <span class="info">+221 7865443333l</span>
                 </div>
             </div>
+
+            <form action="/logout" method="POST"><button class="btn btn--primary" type="submit">Se déconnecter</button></form>
         </div>
 
         <div class="user--main__content">
@@ -44,25 +43,27 @@
             <div class="account--data flex--wrapper">
                 <div class="subscription--card">
 
-                    <div class="top--info">
-                        <span class="no--price" >Aucun abonnement</span>
-                    </div>
-                    <div class="subscription--bottom">
-                    
-                        <a class="btn btn--sm btn--primary" href="/mon-compte/abonnement">Demander une carte</a>
-                    </div> 
-                    <!-- <div class="top--info">
-                        <span class="background--span" >Mon abonnement</span>
-                        <span class="price" >50000 FCFA<sup>/AN</sup></span>
-                    </div>
-                    <div class="subscription--bottom">
-                        <div class="expiration--group">
-                            <p>Expire le</p>
-                            <span class="expiration--date">25 Juillet 2024</span>
+                    <% if (user.accountStatus === "update") { %>
+                        <div class="top--info">
+                            <span class="background--span">Mon abonnement</span>
+                            <span class="price">50000 FCFA<sup>/AN</sup></span>
                         </div>
-
-                        <a class="btn btn--sm btn--primary" href="mon-abonnement">Renouveler</a>
-                    </div> -->
+                        <div class="subscription--bottom">
+                            <div class="expiration--group">
+                                <p>Expire le</p>
+                                <span class="expiration--date">25 Juillet 2024</span>
+                            </div>
+                            <a class="btn btn--sm btn--primary" href="mon-abonnement">Renouveler</a>
+                        </div>
+                    <% } else { %>
+                        <div class="top--info">
+                            <span class="no--price">Aucun abonnement</span>
+                        </div>
+                        <div class="subscription--bottom">
+                            <a class="btn btn--sm btn--primary" href="/mon-compte/abonnement">Demander une carte</a>
+                        </div>
+                    <% } %>
+                    
                 </div>
 
                 <div class="membercard--group">

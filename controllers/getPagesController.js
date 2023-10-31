@@ -1,4 +1,5 @@
 import dotenv from 'dotenv'
+import jwt from 'jsonwebtoken';
 import getBlogPosts from '../middlewares/getBlogPosts.js'
 import projectController from './projectController.js'
 
@@ -78,27 +79,46 @@ const currentPage = `${req.protocol}://${req.get('host')}${req.originalUrl}`
   }
 
   async loginPage(req, res) {
-const currentPage = `${req.protocol}://${req.get('host')}${req.originalUrl}`
 
-   const apiRoot = process.env.API_ROOTE
+       const token = req.cookies.access_token;
+       const apiRoot = process.env.API_ROOTE;
+      
+      if (token) {
+       
+         const userResponse = await fetch(`${apiRoot}/refreshuser`,{
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token
+        }
+        })
 
-   const page =  req.originalUrl === '/' ? 'home' : req.originalUrl.slice(1)
-   // Fetch the page metadata from the API
-   const response = await fetch(`${apiRoot}/metadata/${page}`);
-    // Check the response status
-    if (!response.ok) {
-      return res.status(response.status).send(response.statusText);
-    }
-    // Get the page metadata from the response
-    const pageLocals = await response.json();
+          if (userResponse.status===200) {
+            return res.status(200).redirect(303, '/mon-compte/dashboard');
+          }
+      }  else {
+                    
+              const currentPage = `${req.protocol}://${req.get('host')}${req.originalUrl}`
 
-    // Render the page with the page metadata
-    const locals = {
-      ...pageLocals.data,
-    };
-    
-    
-    res.render(`pages/${page}`, {currentPage, locals})
+              const page =  req.originalUrl === '/' ? 'home' : req.originalUrl.slice(1)
+              // Fetch the page metadata from the API
+              const response = await fetch(`${apiRoot}/metadata/${page}`);
+              // Check the response status
+              if (!response.ok) {
+                return res.status(response.status).send(response.statusText);
+              }
+              // Get the page metadata from the response
+              const pageLocals = await response.json();
+
+              // Render the page with the page metadata
+              const locals = {
+                ...pageLocals.data,
+              };
+              
+              
+              res.render(`pages/${page}`, {currentPage, locals})
+      }
+      
 
   }
 
@@ -498,74 +518,8 @@ const response = await fetch(`${apiRoot}/metadata/${page}`);
 
 }
 
-async myAccount(req, res) {
-  const currentPage = `${req.protocol}://${req.get('host')}${req.originalUrl}`
-  
-      const apiRoot = process.env.API_ROOTE
-     
-      const page =  req.originalUrl === '/' ? 'home' : req.originalUrl.slice(1)
-      // Fetch the page metadata from the API
-      const response = await fetch(`${apiRoot}/metadata/${page}`);
-         // Check the response status
-         if (!response.ok) {
-           return res.status(response.status).send(response.statusText);
-         }
-         // Get the page metadata from the response
-         const pageLocals = await response.json();
-     
-         // Render the page with the page metadata
-         const locals = {
-           ...pageLocals.data,
-         }
-         res.render(`pages/${page}`, {currentPage, locals})
-     
-       }
-       async accountSettings(req, res) {
-        const currentPage = `${req.protocol}://${req.get('host')}${req.originalUrl}`
-        
-            const apiRoot = process.env.API_ROOTE
-           
-            const page =  'parametres'
-            // Fetch the page metadata from the API
-            const response = await fetch(`${apiRoot}/metadata/${page}`);
-               // Check the response status
-               if (!response.ok) {
-                 return res.status(response.status).send(response.statusText);
-               }
-               // Get the page metadata from the response
-               const pageLocals = await response.json();
-           
-               // Render the page with the page metadata
-               const locals = {
-                 ...pageLocals.data,
-               }
-               res.render(`pages/${page}`, {currentPage, locals})
-           
-             }
 
 
-             async accountSubscription(req, res) {
-              const currentPage = `${req.protocol}://${req.get('host')}${req.originalUrl}`
-              
-                  const apiRoot = process.env.API_ROOTE
-                 
-                  const page =  'abonnement'
-                  // Fetch the page metadata from the API
-                  const response = await fetch(`${apiRoot}/metadata/${page}`);
-                     // Check the response status
-                     if (!response.ok) {
-                       return res.status(response.status).send(response.statusText);
-                     }
-                     // Get the page metadata from the response
-                     const pageLocals = await response.json();
-                 
-                     // Render the page with the page metadata
-                     const locals = {
-                       ...pageLocals.data,
-                     }
-                     res.render(`pages/${page}`, {currentPage, locals})
-                 
-                   }
 
 }
 
