@@ -33,6 +33,37 @@ class projectsController {
     }
   }
 
+  async latestProject(req, res) {
+    try {
+     
+      // Fetch the projects list from the API.
+      const projectsData = await fetch(`${process.env.API_ROOTE}/latest-projects`);
+      if (!projectsData.ok) {
+        throw new Error(`Failed to fetch projects list: ${projectsData.status}`);
+      }
+
+      // Get the project data from the response.
+      const projectsRaw = await projectsData.json();
+      const projects = [...projectsRaw.projectData];
+      
+      projects.forEach((project) => {
+        project.link = project.title
+          .toLowerCase()
+          .replace(/\s+/g, '-') // Replace spaces with hyphens
+          .normalize('NFD') // Normalize to remove accents
+          .replace(/[\u0300-\u036f]/g, '');
+          project.summary = project.summary.length > 75 ? project.summary.substring(0, 75) + '...' : project.summary;
+          project.title = project.title.length > 40 ? project.title.substring(0, 40) + '...' : project.title;
+      });
+      // Render the page.
+    return projects
+    } catch (error) {
+      // Handle the error.
+      console.error(error);
+      res.status(500).send('Internal server error.');
+    }
+  }
+
   async single(id) {
 
     const apiRoot = process.env.API_ROOTE

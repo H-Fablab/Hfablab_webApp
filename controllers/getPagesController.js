@@ -28,8 +28,10 @@ dotenv.config()
     };
     const blog_raw = await getBlogPosts.latest()
     const blog_data = [...blog_raw.data]
+
+    const projectList = await projectController.latestProject()
     
-    res.render(`pages/${page}`, {currentPage, locals, blog_data})
+    res.render(`pages/${page}`, {currentPage, locals, blog_data, projectList})
   }
 
   async aboutUsPage(req, res) {

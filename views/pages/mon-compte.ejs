@@ -4,39 +4,17 @@
     <img src="images/project.webp" alt="" srcset="">
     <div class="overlay"></div>
     <span class="user--profile">
-        <img src="images/Rectangle 23.png" alt="" srcset="">
+        <img src="images/users/default.jpg" alt="" srcset="">
     </span>
 </section>
 
 <section class="section--wrapper user--account unset--account">
     <div class="main--container">
-        <div class="user--info">
-            <div class="user--name__group">
-                <h4><%= user.fullName %></h4>
-                <span><%= user.email %></span>
-            </div>
-
-            <div class="info--table">
-                <div class="info--row">
-                    <span class="info--title">Pays:</span>
-                    <span class="info">Sénégal</span>
-                </div>
-                <div class="info--row">
-                    <span class="info--title">Adresse:</span>
-                    <span class="info">Angré 7eme tranche, Abidjan,Côte d’ivoire</span>
-                </div>
-                <div class="info--row">
-                    <span class="info--title">Téléphone:</span>
-                    <span class="info">+221 7865443333l</span>
-                </div>
-            </div>
-
-            <form action="/logout" method="POST"><button class="btn btn--primary" type="submit">Se déconnecter</button></form>
-        </div>
+        <%- include('../partials/user--info__card') %>
 
         <div class="user--main__content">
             <nav>
-                <a class="tab--nav__link active" href="/mon-compte">Mon compte</a>
+                <a class="tab--nav__link active" href="/mon-compte/dashboard">Mon compte</a>
                 <a class="tab--nav__link" href="/mon-compte/parametres">Paramètres</a>
             </nav>
 

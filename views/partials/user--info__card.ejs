@@ -1,0 +1,23 @@
+<div class="user--info">
+    <div class="user--name__group">
+        <h4><%= user.fullName %></h4>
+        <span><%= user.email %></span>
+    </div>
+
+    <div class="info--table">
+        <div class="info--row">
+            <span class="info--title">Pays:</span>
+            <span class="info">...</span>
+        </div>
+        <div class="info--row">
+            <span class="info--title">Adresse:</span>
+            <span class="info">...</span>
+        </div>
+        <div class="info--row">
+            <span class="info--title">Téléphone:</span>
+            <span class="info">....</span>
+        </div>
+    </div>
+
+    <form action="/logout" method="POST"><button class="btn btn--primary mt-2" type="submit">Se déconnecter</button></form>
+</div>
