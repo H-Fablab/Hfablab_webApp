@@ -1,63 +1,67 @@
 <%- include('../partials/main__nav') %>
-<section class="inner--hero inner--hero__bloc section--margin mt-7">
-         <div class="hero--banner">
-                <img src="images/<%= locals.banner__image  %>" alt="" srcset="">
-                 <div class="header--text__container">
-                        <h1><%= locals.hero__title  %></h1>
-                        <p><%= locals.hero__subtitle %></p>
-                    </div>
-                 <div class="dark--separator"></div>
-        </div>  
-</section>
+    <section class="inner--hero inner--hero__bloc section--margin mt-7">
+        <div class="hero--banner">
+            <img src="images/<%= locals.banner__image  %>" alt="" srcset="">
+            <div class="header--text__container">
+                <h1>
+                    <%= locals.hero__title %>
+                </h1>
+                <p>
+                    <%= locals.hero__subtitle %>
+                </p>
+            </div>
+            <div class="dark--separator"></div>
+        </div>
+    </section>
 
     <section class="section--wrapper mt-5 mb-5">
-          <div class="container flex--container">
-       
-        <div class="col--unit__6  centered--box form--wrapper">
-            <form action="post" enctype="multipart/form-data" id="projectSubmissionForm" >
-                <div class="input--wrapper">
+        <div class="container flex--container">
+
+            <div class="col--unit__6  centered--box form--wrapper">
+                <form action="post" enctype="multipart/form-data" id="projectSubmissionForm">
+                    <div class="input--wrapper">
                         <label for="">Nom complet </label>
                         <input type="text" name="" id="fullName">
                     </div>
-                     <div class="input--wrapper">
+                    <div class="input--wrapper">
                         <label for="">Pays</label>
                         <input type="text" name="" id="country">
                     </div>
-                     <div class="input--wrapper ">
+                    <div class="input--wrapper ">
                         <label for="">Adresse</label>
                         <input type="text" name="address" id="address">
                     </div>
-                <div class="flex--container">
-                     <div class="input--wrapper col--unit__6">
-                        <label for="">Email</label>
-                        <input type="text" name="email" id="email">
+                    <div class="flex--container">
+                        <div class="input--wrapper col--unit__6">
+                            <label for="">Email</label>
+                            <input type="text" name="email" id="email">
+                        </div>
+
+                        <div class="input--wrapper col--unit__6">
+                            <label for="">Téléphone </label>
+                            <input type="tel" name="phoneNumber" id="phoneNumber">
+                        </div>
                     </div>
 
-                    <div class="input--wrapper col--unit__6">
-                        <label for="">Téléphone </label>
-                        <input type="tel" name="phoneNumber" id="phoneNumber">
-                    </div>
-                </div>
-
-                <div class="input--wrapper">
+                    <div class="input--wrapper">
                         <label for="">Titre du projet </label>
                         <input type="text" name="" id="projectTitle">
-                </div>
+                    </div>
 
-                <div class="input--wrapper ">
+                    <div class="input--wrapper ">
                         <label for="">Résumé du projet </label>
                         <textarea name="summary" id="summary" cols="30" rows="6"></textarea>
-                </div>
+                    </div>
 
-                <div class="input--wrapper ">
+                    <div class="input--wrapper ">
                         <label for="">Besoin en matériel</label>
                         <textarea name="requirement" id="requirement" cols="15" rows="6"></textarea>
-                </div>
+                    </div>
 
-                 <div class="input--wrapper">
+                    <div class="input--wrapper">
                         <label for="">Niveau d'avancement </label>
-                         <div class="select level--box">
-                            <select id="projectLevel"> 
+                        <div class="select level--box">
+                            <select id="projectLevel">
                                 <option value="">Sélectionnez</option>
                                 <option value="Idéation">Idéation</option>
                                 <option value="Prototype">Prototype</option>
@@ -65,18 +69,18 @@
                                 <option value="Autres">Autres</option>
                             </select>
                         </div>
-                </div>
+                    </div>
 
-                <!-- <div class="input--wrapper file--input">
-                    <label for="">Ajouter un fichier </label>
-                       <input type="file" id="pojectDoc" name="profile_pic" accept="application/pdf" />
-            </div> -->
+                    <div class="input--wrapper file--input">
+                        <label for="">Ajouter un fichier </label>
+                        <input type="file" id="pojectDoc" name="profile_pic" accept="application/pdf" />
+                    </div>
 
 
-                <button class="btn btn--primary" type="submit">Soummettre</button>
-            </form>
+                    <button class="btn btn--primary" type="submit">Soummettre</button>
+                </form>
+            </div>
         </div>
-    </div>
     </section>
 
-<%- include('../partials/main__footer') %>
+    <%- include('../partials/main__footer') %>

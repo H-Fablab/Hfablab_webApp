@@ -18,16 +18,19 @@ class memberController {
         },
         body: JSON.stringify(formData),
       });
+
       const userData = await response.json();
 
       if (response.ok) {
-
         res.cookie("access_token", userData.token, {
           httpOnly: true,
           secure: process.env.NODE_ENV === "production",
         });
-
-        return res.status(200).redirect(303, '/mon-compte/dashboard');
+        
+        // return res.status(200).redirect(303, '/mon-compte/dashboard');
+        return res.status(200).send({
+          message: "Success"
+        })
       } else {
         // Handle errors from the backend API
         const errorMessage = 'Login Failed';
