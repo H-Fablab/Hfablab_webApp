@@ -86,7 +86,7 @@ const validateInputs = async () => {
   const requirement = document.getElementById('requirement');
   const projectLevel = document.getElementById('projectLevel');
   const levelBox = document.querySelector('.level--box');
-//   const pojectDoc = document.getElementById('pojectDoc')
+  const projectDoc = document.getElementById('projectDoc')
 
 
   let hasError = false; // Track if there are any errors
@@ -136,39 +136,59 @@ const validateInputs = async () => {
     hasError = true;
   }
 
-
-//  // Check if a file is selected
-//   if (pojectDoc.files.length === 0) {
-//     setError(pojectDoc, 'Veuillez sélectionner un fichier PDF');
-//     hasError = true;
-//   } else {
+ // Check if a file is selected
+  if (projectDoc.files.length === 0) {
+    setError(projectDoc, 'Veuillez sélectionner un fichier PDF');
+    hasError = true;
+  } 
    
-//   //
+  //
     if (hasError) {
       throw new Error('Please fill in all required fields.');
     }
 
+    var formdata = new FormData();
+    formdata.append("fullName", fullname.value.trim());
+    formdata.append("email",  email.value.trim());
+    formdata.append("phoneNumber", phoneNumber.value.trim());
+    formdata.append("country", country.value.trim());
+    formdata.append("address", address.value.trim());
+    formdata.append("summary", summary.value.trim());
+    formdata.append("file", projectDoc.files[0]);
+    formdata.append("requirement", requirement.value.trim());
+    formdata.append("projectTitle", projectTitle.value.trim());
+    formdata.append("projectLevel", projectLevel.value.trim());
 
-  const formData = {
-    fullName: fullname.value.trim(),
-    country: country.value.trim(),
-    email: email.value.trim(),
-    phoneNumber: phoneNumber.value.trim(),
-    address: address.value.trim(),
-    projectTitle: projectTitle.value.trim(),
-    summary: summary.value.trim(),
-    requirement: requirement.value.trim(),
-    projectLevel: projectLevel.value.trim()
+    // const formDatavalues = {
+    //   fullName: fullname.value.trim(),
+    //   country: country.value.trim(),
+    //   email: email.value.trim(),
+    //   phoneNumber: phoneNumber.value.trim(),
+    //   address: address.value.trim(),
+    //   projectTitle: projectTitle.value.trim(),
+    //   summary: summary.value.trim(),
+    //   requirement: requirement.value.trim(),
+    //   projectLevel: projectLevel.value.trim()
+    // };
     
-  };
+    // var requestOptions = {
+    //   method: 'POST',
+    //   body: formdata,
+    //   redirect: 'follow'
+    // };
+    
+    // fetch("http://localhost:9003/project-submission", requestOptions)
+    //   .then(response => response.text())
+    //   .then(result => console.log(result))
+    //   .catch(error => console.log('error', error));
 
-  console.log(formData)
+  // console.log(formData)
   const response = await fetch('http://localhost:9003/project-submission', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      // 'Content-Type': 'application/json',
     },
-    body: JSON.stringify(formData),
+    body: formdata,
   });
 
   const data = await response.json();
@@ -177,7 +197,7 @@ const validateInputs = async () => {
     showSuccessMessage();
     console.log('Message sent successfully');
   } else {
-    showErrorMessage("Une erreur s'est produite, Merce de réssayer")
+    showErrorMessage("Une erreur s'est produite, Merci de réssayer")
     throw new Error(data.message || 'Failed to send message');
   }
 };

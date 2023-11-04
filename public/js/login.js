@@ -161,9 +161,12 @@ const validateSignUpInputs = async () => {
         if (response.ok) {
             window.location = "/mon-compte/dashboard"
             console.log('Message sent successfully');
+        } else {
+            showErrorMessage(signupForm, data.message || "Une erreur s'est produite, Merci de réssayer")
+            throw new Error(error.message || 'Failed to send message');
         }
     } catch (error) {
-        showErrorMessage(signupForm, "Une erreur s'est produite, Merci de réssayer")
+        // showErrorMessage(signupForm, "Une erreur s'est produite, Merci de réssayer")
         throw new Error(error.message || 'Failed to send message');
     }
 };
@@ -205,12 +208,15 @@ const validateLogInInputs = async () => {
 
         const data = await response.json();
 
-        if (response.status === 200) {
+        if (response.ok) {
             window.location = "/mon-compte/dashboard"
             console.log('Message sent successfully');
+        } else {
+            showErrorMessage(loginForm, data.message || "Une erreur s'est produite, Merci de réssayer")
+            throw new Error(data.message || 'Failed to send message');
         }
     } catch (error) {
-        showErrorMessage(loginForm, data.message || "Une erreur s'est produite, Merci de réssayer")
+        // showErrorMessage(loginForm, data.message | "Une erreur s'est produite, Merci de réssayer")
         throw new Error(data.message || 'Failed to send message');
     }
 };
