@@ -10,6 +10,7 @@ router.route('/mon-compte/dashboard').get(auth, memberController.myAccount)
 router.route('/mon-compte/parametres').get(auth, memberController.accountSettings)
 router.route('/mon-compte/abonnement').get(auth, memberController.accountSubscription)
 router.route('/logout').post(auth, memberController.logout)
+router.route('/updatesettings').post(auth, memberController.updateSettings)
 
 
 export default router

@@ -26,7 +26,7 @@ class memberController {
           httpOnly: true,
           secure: process.env.NODE_ENV === "production",
         });
-        
+
         // return res.status(200).redirect(303, '/mon-compte/dashboard');
         return res.status(200).send({
           message: "Success"
@@ -135,6 +135,31 @@ class memberController {
 
   }
 
+  async updateSettings(req, res) {
+    const apiRoot = process.env.API_ROOTE
+    const token = req.cookies.access_token;
+    const formData = req.body
+
+    const response = await fetch(`${apiRoot}/updatesettings`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': token
+      },
+      body: JSON.stringify(formData),
+    })
+
+    const data = await response.json()
+
+    if (response.ok) {
+      return res.status(200).send({ ...data })
+    } else {
+      return res.status(500).send({
+        message: data?.message || "Une erreur est survenue!"
+      })
+    }
+
+  }
 
   async accountSubscription(req, res) {
     const currentPage = `${req.protocol}://${req.get('host')}${req.originalUrl}`
@@ -180,7 +205,7 @@ class memberController {
           secure: process.env.NODE_ENV === "production",
         });
 
-        return res.status(200).json({ message:'Success'})
+        return res.status(200).json({ message: 'Success' })
       } else if (response.status === 409) {
         return res.status(409).json({ message: 'User already exists' });
       } else {

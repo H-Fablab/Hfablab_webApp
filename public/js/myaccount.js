@@ -1,74 +1,147 @@
-// document.addEventListener("DOMContentLoaded", async () => {
-//     const fullNameCont = document.querySelector('.user--name__group h4')
-//     const emailCont = document.querySelector(".user--name__group span")
-//     const country = document.querySelectorAll(".user--info .info--table span.info")[0]
-//     const address = document.querySelectorAll(".user--info .info--table span.info")[1]
-//     const phone = document.querySelectorAll(".user--info .info--table span.info")[2]
-    
-//     const disconnect = document.querySelector(".user--disconnect button")
-//     const disconnectValue = disconnect.innerText
-//     // const data = await JSON.parse(localStorage.getItem("user"))
-//     const token = localStorage.getItem("token")
+const uri = window.location.origin
 
-//     try {
-//         const response = await fetch('http://localhost:9003/auth', {
-//             method: 'GET',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 "Authorization": "Bearer " + token
-//             }
-//         })
+document.addEventListener('DOMContentLoaded', () => {
 
-//         const { user } = await response.json()
-//         fullNameCont.innerText = user.fullName
-//         emailCont.innerText = user.email
-//         country.innerText = user?.country || "inconnu"
-//         address.innerText = user?.address || "inconnu"
-//         phone.innerText = user?.phone || "inconnu"
+    const accountInfosForm = document.getElementById("accountInfosForm")
+    const country = document.getElementById("country")
+    const address = document.getElementById("address")
+    const phoneNumber = document.getElementById("phoneNumber")
+    const email = document.getElementById("email")
+    const password = document.getElementById("password")
+    const newpassword = document.getElementById("newpassword")
+    const renewpassword = document.getElementById("renewpassword")
 
-//     } catch (error) {
-//         console.log(error)
-//         window.location = "/login"
-//     }
+    accountInfosForm?.addEventListener("submit", async e => {
 
-//     disconnect.addEventListener("click", async (e) => {
-//         e.preventDefault()
-//         disconnect.innerHTML = "Déconnexion<span class='form-loader'></span>"
-//         disconnect.disabled = true
-//         console.log("clicked!")
-//         try {
-//             const response = await fetch('http://localhost:9003/logout', {
-//                 method: 'POST',
-//                 headers: {
-//                     'Content-Type': 'application/json',
-//                     "Authorization": "Bearer " + token
-//                 }
-//             })
+        e.preventDefault()
+        clearErrors()
 
-//             // const {user} = await response.json()
-//             // fullNameCont.innerText = user.fullName
-//             // emailCont.innerText = user.email
-//             window.location = "/login"
+        const submitButton = accountInfosForm.querySelector('input[type="submit"]');
+        const originalButtonContent = submitButton.innerHTML;
 
-//         } catch (error) {
-//             disconnect.innerText = "An error occurred!"
-//         }
+        // Add the spinner
+        submitButton.innerHTML = 'Envoyer<span class="form-loader"></span>';
+        submitButton.disabled = true;
 
-//         setTimeout(() => {
-//             disconnect.innerText = disconnectValue
-//             disconnect.disabled = false
-//         }, 1000);
-//     })
+        let formData = {}
 
-//     if (document.querySelector("#validatebtn")) {
-//         const validatebtn = document.getElementById('validatebtn')
-//         validatebtn.addEventListener("click", async e => {
-//             e.preventDefault()
-//             const birthDate = document.getElementById("birthDate")
-//             const country = document.getElementById("country")
-//             const address = document.getElementById("address")
-//             const phoneNumber = document.getElementById("phoneNumber")
-            
-//         })
-//     }
-// })
+        let hasError = false
+
+        if (country.value.trim() !== '') {
+            formData.country = country.value.trim()
+        }
+        if (address.value.trim() !== '') {
+            formData.address = address.value.trim()
+        }
+        if (phoneNumber.value.trim() !== '') {
+            formData.phoneNumber = phoneNumber.value.trim()
+        }
+        if (email.value.trim() !== '') {
+            formData.email = email.value.trim()
+        }
+        if (password.value.trim() !== '') {
+            formData.password = password.value.trim()
+        }
+        if (password.value.trim() !== '') {
+            if (newpassword.value.trim() === '') {
+                setError(newpassword, 'Veuillez remplir ce champ');
+                hasError = true;
+            }
+            if (renewpassword.value.trim() === '') {
+                setError(renewpassword, 'Veuillez remplir ce champ');
+                hasError = true;
+            }
+            if (renewpassword.value.trim() === newpassword.value.trim()) {
+                setError(renewpassword, 'les mots de passe ne correspondent pas!');
+                hasError = true;
+            }
+        }
+        if (password.value.trim() !== '') {
+            formData.password = password.value.trim()
+        }
+        if (newpassword.value.trim() !== '') {
+            formData.newpassword = newpassword.value.trim()
+        }
+        if (renewpassword.value.trim() !== '') {
+            formData.renewpassword = renewpassword.value.trim()
+        }
+
+        if (hasError) {
+            throw new Error('Please fill in all required fields.');
+        }
+
+        console.log(formData)
+
+        const response = await fetch(`${uri}/updatesettings`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+
+        const data = await response.json()
+
+        if (response.ok) {
+            // Reset the form on success
+            accountInfosForm.reset();
+            showSuccessMessage()
+        } else {
+            showErrorMessage(accountInfosForm, "Une erreur est survenu!")
+        }
+        submitButton.innerHTML = originalButtonContent;
+        submitButton.disabled = false;
+    })
+})
+
+const showErrorMessage = (element, message) => {
+    const errorMessageHTML = `
+    <div class="error-container">
+      <p class="error-message">${message}</p>
+    </div>
+  `;
+    element.insertAdjacentHTML('beforeend', errorMessageHTML);
+};
+
+const showSuccessMessage = () => {
+    const successMessageHTML = `
+    <div class="submission--overlay">
+      <div class="overlay-box">
+        <span class="icon--box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);"><path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path></svg>
+        </span>
+        <h4 class="result">Succès</h4>
+        <p class="message">Votre message a été envoyé avec succès</p>
+        <a class="btn btn--primary" id="okButton">Ok</a>
+      </div>
+    </div>
+  `;
+
+    document.body.insertAdjacentHTML('beforeend', successMessageHTML);
+
+    // Add an event listener for the "Ok" button to remove the message
+    const okButton = document.getElementById('okButton');
+    okButton.addEventListener('click', () => {
+        const successMessage = document.querySelector('.submission--overlay');
+        successMessage.remove();
+        window.location.reload()
+    });
+};
+
+
+const setError = (element, message) => {
+    const errorDisplay = document.createElement('small');
+    errorDisplay.textContent = message;
+    errorDisplay.classList.add('error');
+    element.insertAdjacentElement('afterend', errorDisplay);
+};
+
+const clearErrors = () => {
+    const errorElements = document.querySelectorAll('.error');
+    errorElements.forEach((errorElement) => {
+        errorElement.remove();
+    });
+    if (document.querySelector(".error-container")) {
+        document.querySelector(".error-container").remove()
+    }
+};
