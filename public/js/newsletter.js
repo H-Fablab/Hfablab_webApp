@@ -2,6 +2,9 @@ const form = document.getElementById('newsletterForm');
 const errorContainer = document.createElement('div');
 errorContainer.classList.add('error-container');
 
+// origin url for the request
+const origin = window.location.origin
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   
@@ -117,7 +120,7 @@ const validateInputs = async () => {
   };
 
   // Send the data to the server
-  const response = await fetch(`http://localhost:9003/newsletter`, {
+  const response = await fetch(`${origin}/newsletter`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -130,6 +133,6 @@ const validateInputs = async () => {
   if (data.status === 'Success') {
     showSuccessMessage();
   } else {
-    showErrorMessage("Une erreur s'est produite. Merci de réessayer.");
+    showErrorMessage(data.message);
   }
 };

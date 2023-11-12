@@ -7,6 +7,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import pagesRoutes from './routes/mainPages.js'
 import userRoutes from './routes/user.js'
+import newsletterRoute from "./routes/newsletter.js"
 
 // Create Express app
 const app = express()
@@ -33,6 +34,7 @@ app.use(cors({
 // Import routes
 app.use(pagesRoutes);
 app.use(userRoutes);
+app.use(newsletterRoute)
 
 
 app.use(bodyParser.urlencoded({ extended: true })) // Parse URL-encoded bodies

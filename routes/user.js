@@ -1,5 +1,4 @@
 import express from 'express' 
-import getPagesController from '../controllers/getPagesController.js'
 import memberController from '../controllers/memberController.js'
 import auth from '../middlewares/auth.js'
 const router = express.Router()
