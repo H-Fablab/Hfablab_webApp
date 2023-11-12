@@ -127,7 +127,7 @@ const validateInputs = async () => {
     message: message.value.trim()
   };
 
-  const response = await fetch('http://localhost:9003/contact', {
+  const response = await fetch(`${origin}/contact`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -139,9 +139,9 @@ const validateInputs = async () => {
 
   if (data.status === 'Success') {
     showSuccessMessage();
-    console.log('Message sent successfully');
+    // console.log('Message sent successfully');
   } else {
-    showErrorMessage("Une erreur s'est produite, Merce de réssayer")
+    showErrorMessage("Une erreur s'est produite, Merci de réssayer")
     throw new Error(data.message || 'Failed to send message');
   }
 };
