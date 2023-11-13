@@ -1,98 +1,103 @@
 const uri = window.location.origin
 
-document.addEventListener('DOMContentLoaded', () => {
 
-    const accountInfosForm = document.getElementById("accountInfosForm")
-    const country = document.getElementById("country")
-    const address = document.getElementById("address")
-    const phoneNumber = document.getElementById("phoneNumber")
-    const email = document.getElementById("email")
-    const password = document.getElementById("password")
-    const newpassword = document.getElementById("newpassword")
-    const renewpassword = document.getElementById("renewpassword")
 
-    accountInfosForm?.addEventListener("submit", async e => {
+const accountInfosForm = document.getElementById("accountInfosForm")
+const country = document.getElementById("country")
+const address = document.getElementById("address")
+const phoneNumber = document.getElementById("phoneNumber")
+const email = document.getElementById("email")
+const password = document.getElementById("password")
+const newpassword = document.getElementById("newpassword")
+const renewpassword = document.getElementById("renewpassword")
 
-        e.preventDefault()
-        clearErrors()
+accountInfosForm?.addEventListener("submit", async e => {
 
-        const submitButton = accountInfosForm.querySelector('input[type="submit"]');
-        const originalButtonContent = submitButton.innerHTML;
+    e.preventDefault()
+    clearErrors()
 
-        // Add the spinner
-        submitButton.innerHTML = 'Envoyer<span class="form-loader"></span>';
-        submitButton.disabled = true;
+    const submitButton = accountInfosForm.querySelector('input[type="submit"]');
+    const originalButtonContent = submitButton.innerHTML;
 
-        let formData = {}
+    // Add the spinner
+    submitButton.innerHTML = 'Envoyer<span class="form-loader"></span>';
+    submitButton.disabled = true;
 
-        let hasError = false
+    const i = new Date()
 
-        if (country.value.trim() !== '') {
-            formData.country = country.value.trim()
+    let formData = {
+        birthDate: i
+    }
+
+    let hasError = false
+
+    if (country.value.trim() !== '') {
+        formData.country = country.value.trim()
+    }
+    if (address.value.trim() !== '') {
+        formData.address = address.value.trim()
+    }
+    if (phoneNumber.value.trim() !== '') {
+        formData.phoneNumber = phoneNumber.value.trim()
+    }
+    if (email.value.trim() !== '') {
+        formData.email = email.value.trim()
+    }
+    if (password.value.trim() !== '') {
+        formData.password = password.value.trim()
+    }
+    if (password.value.trim() !== '') {
+        if (newpassword.value.trim() === '') {
+            setError(newpassword, 'Veuillez remplir ce champ');
+            hasError = true;
         }
-        if (address.value.trim() !== '') {
-            formData.address = address.value.trim()
+        if (renewpassword.value.trim() === '') {
+            setError(renewpassword, 'Veuillez remplir ce champ');
+            hasError = true;
         }
-        if (phoneNumber.value.trim() !== '') {
-            formData.phoneNumber = phoneNumber.value.trim()
+        if (renewpassword.value.trim() === newpassword.value.trim()) {
+            setError(renewpassword, 'les mots de passe ne correspondent pas!');
+            hasError = true;
         }
-        if (email.value.trim() !== '') {
-            formData.email = email.value.trim()
-        }
-        if (password.value.trim() !== '') {
-            formData.password = password.value.trim()
-        }
-        if (password.value.trim() !== '') {
-            if (newpassword.value.trim() === '') {
-                setError(newpassword, 'Veuillez remplir ce champ');
-                hasError = true;
-            }
-            if (renewpassword.value.trim() === '') {
-                setError(renewpassword, 'Veuillez remplir ce champ');
-                hasError = true;
-            }
-            if (renewpassword.value.trim() === newpassword.value.trim()) {
-                setError(renewpassword, 'les mots de passe ne correspondent pas!');
-                hasError = true;
-            }
-        }
-        if (password.value.trim() !== '') {
-            formData.password = password.value.trim()
-        }
-        if (newpassword.value.trim() !== '') {
-            formData.newpassword = newpassword.value.trim()
-        }
-        if (renewpassword.value.trim() !== '') {
-            formData.renewpassword = renewpassword.value.trim()
-        }
+    }
+    if (password.value.trim() !== '') {
+        formData.password = password.value.trim()
+    }
+    if (newpassword.value.trim() !== '') {
+        formData.newpassword = newpassword.value.trim()
+    }
+    if (renewpassword.value.trim() !== '') {
+        formData.renewpassword = renewpassword.value.trim()
+    }
 
-        if (hasError) {
-            throw new Error('Please fill in all required fields.');
-        }
+    if (hasError) {
+        throw new Error('Please fill in all required fields.');
+    }
 
-        console.log(formData)
+    console.log(formData)
 
-        const response = await fetch(`${uri}/updatesettings`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        })
-
-        const data = await response.json()
-
-        if (response.ok) {
-            // Reset the form on success
-            accountInfosForm.reset();
-            showSuccessMessage()
-        } else {
-            showErrorMessage(accountInfosForm, "Une erreur est survenu!")
-        }
-        submitButton.innerHTML = originalButtonContent;
-        submitButton.disabled = false;
+    const response = await fetch(`${uri}/updatesettings`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
     })
+
+    const data = await response.json()
+
+    if (response.ok) {
+        // Reset the form on success
+        accountInfosForm.reset();
+        showSuccessMessage()
+    } else {
+        showErrorMessage(accountInfosForm, "Une erreur est survenu!")
+    }
+
+    submitButton.innerHTML = originalButtonContent;
+    submitButton.disabled = false;
 })
+
 
 const showErrorMessage = (element, message) => {
     const errorMessageHTML = `
