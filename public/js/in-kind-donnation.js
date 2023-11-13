@@ -1,6 +1,13 @@
+const origin = window.location.origin
 const form = document.getElementById('form-donnation-2');
 const errorContainer = document.createElement('div');
 errorContainer.classList.add('error-container');
+
+const donnationForm = document.getElementById("donnationForm")
+
+donnationForm.addEventListener("submit", async e => {
+  e.preventDefault()
+})
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -127,7 +134,7 @@ const validateInputs = async () => {
     description: description.value.trim()
   };
 
-  const response = await fetch('http://localhost:9003/in-kind-donnation', {
+  const response = await fetch(`${origin}/in-kind-donnation`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

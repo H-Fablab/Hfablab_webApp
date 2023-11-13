@@ -9,6 +9,7 @@ import pagesRoutes from './routes/mainPages.js'
 import userRoutes from './routes/user.js'
 import newsletterRoute from "./routes/newsletter.js"
 import contactus from "./routes/contactus.js"
+import inKindDonnation from './routes/in-kind-donnation.js';
 
 // Create Express app
 const app = express()
@@ -32,12 +33,12 @@ app.use(cors({
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders:'Content-Type, Accepts, Authorization'
 }));
-// Import routes
+// Imported routes
 app.use(pagesRoutes);
 app.use(userRoutes);
 app.use(newsletterRoute)
 app.use(contactus)
-
+app.use(inKindDonnation)
 
 app.use(bodyParser.urlencoded({ extended: true })) // Parse URL-encoded bodies
 app.use(bodyParser.json()); // Parse JSON bodies
