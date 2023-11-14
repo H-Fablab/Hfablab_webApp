@@ -26,7 +26,7 @@ accountInfosForm?.addEventListener("submit", async e => {
     const i = new Date()
 
     let formData = {
-        birthDate: i
+        // birthDate: i
     }
 
     let hasError = false
@@ -55,7 +55,7 @@ accountInfosForm?.addEventListener("submit", async e => {
             setError(renewpassword, 'Veuillez remplir ce champ');
             hasError = true;
         }
-        if (renewpassword.value.trim() === newpassword.value.trim()) {
+        if (renewpassword.value.trim() !== newpassword.value.trim()) {
             setError(renewpassword, 'les mots de passe ne correspondent pas!');
             hasError = true;
         }
