@@ -10,6 +10,7 @@ import userRoutes from './routes/user.js'
 import newsletterRoute from "./routes/newsletter.js"
 import contactus from "./routes/contactus.js"
 import inKindDonnation from './routes/in-kind-donnation.js';
+import equipementBooking from './routes/equipement-booking.js';
 
 // Create Express app
 const app = express()
@@ -39,6 +40,7 @@ app.use(userRoutes);
 app.use(newsletterRoute)
 app.use(contactus)
 app.use(inKindDonnation)
+app.use(equipementBooking)
 
 app.use(bodyParser.urlencoded({ extended: true })) // Parse URL-encoded bodies
 app.use(bodyParser.json()); // Parse JSON bodies

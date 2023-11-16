@@ -2,6 +2,7 @@ var body = document.body;
 const form = document.getElementById('equipmentBooking');
 const errorContainer = document.createElement('div');
 errorContainer.classList.add('error-container');
+const origin = window.location.origin
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -140,7 +141,7 @@ const validateInputs = async () => {
   };
 
   console.log(formData)
-  const response = await fetch('http://localhost:9003/equipment-booking', {
+  const response = await fetch(`${origin}/equipment-booking`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
